@@ -2,7 +2,7 @@ import React, { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router';
 import Cast from '../components/shows/Cast';
 import Details from '../components/shows/Details';
-// import Episodes from '../components/shows/Episodes';
+
 import Seasons from '../components/shows/Seasons';
 import ShowMainData from '../components/shows/ShowMainData';
 import { apiGet } from '../misc/config';
@@ -45,7 +45,7 @@ const Show = () => {
                     if (isMounted) {
                         dispatch({ type: 'FETCH_SUCCESS', show: results });
                     }
-                }, 1000);
+                }, 500);
             })
             .catch(err => {
                 if (isMounted) {
