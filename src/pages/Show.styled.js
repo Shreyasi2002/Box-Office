@@ -24,3 +24,29 @@ export const InfoBlock = styled.div`
         font-size: 22px;
     }
 `;
+
+export const LoadingAndErrors = styled.div`
+    h3 {
+        display: flex;
+        justify-content: center;
+    }
+    .loading {
+        display: flex;
+        justify-content: center;
+    }
+    .loading::after {
+        content: '';
+        width: 100px;
+        height: 100px;
+        border: 30px solid #dddddd;
+        border-top-color: blue;
+        border-radius: 50%;
+        animation: loading 1s ease-in infinite;
+    }
+
+    @keyframes loading {
+        to {
+            transform: rotate(1turn);
+        }
+    } ;
+`;

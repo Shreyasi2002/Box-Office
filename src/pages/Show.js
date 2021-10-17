@@ -5,8 +5,9 @@ import Details from '../components/shows/Details';
 
 import Seasons from '../components/shows/Seasons';
 import ShowMainData from '../components/shows/ShowMainData';
+
 import { apiGet } from '../misc/config';
-import { InfoBlock, ShowPageWrapper } from './Show.styled';
+import { InfoBlock, LoadingAndErrors, ShowPageWrapper } from './Show.styled';
 
 const initialState = {
     show: null,
@@ -45,7 +46,7 @@ const Show = () => {
                     if (isMounted) {
                         dispatch({ type: 'FETCH_SUCCESS', show: results });
                     }
-                }, 500);
+                }, 1000);
             })
             .catch(err => {
                 if (isMounted) {
@@ -58,14 +59,21 @@ const Show = () => {
         };
     }, [id]);
 
-    // console.log(show);
-
     if (isLoading) {
-        return <div>Data is being loaded...</div>;
+        return (
+            <LoadingAndErrors>
+                <div className="loading" />
+                <h3>Data is being loaded ...</h3>
+            </LoadingAndErrors>
+        );
     }
 
     if (error) {
-        return <div>Error Occured : {error}</div>;
+        return (
+            <div style={{ display: 'flex', fontSize: '22px' }}>
+                Error Occured : {error}
+            </div>
+        );
     }
     return (
         <ShowPageWrapper>
