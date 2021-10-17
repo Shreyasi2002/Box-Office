@@ -42,7 +42,7 @@ function App() {
                                 <br /> had its name changed or is temporarily
                                 unavailable.
                             </p>
-                            <a href="/">GO TO HOMEPAGE</a>
+                            <a href=".">GO TO HOMEPAGE</a>
                         </div>
                     </NotFound>
                 </Route>
