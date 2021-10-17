@@ -70,7 +70,13 @@ const Show = () => {
 
     if (error) {
         return (
-            <div style={{ display: 'flex', fontSize: '22px' }}>
+            <div
+                style={{
+                    display: 'flex',
+                    fontSize: '18px',
+                    justifyContent: 'center',
+                }}
+            >
                 Error Occured : {error}
             </div>
         );
