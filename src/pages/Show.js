@@ -1,5 +1,10 @@
 import React, { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router';
+import Cast from '../components/shows/Cast';
+import Details from '../components/shows/Details';
+// import Episodes from '../components/shows/Episodes';
+import Seasons from '../components/shows/Seasons';
+import ShowMainData from '../components/shows/ShowMainData';
 import { apiGet } from '../misc/config';
 
 const initialState = {
@@ -52,6 +57,8 @@ const Show = () => {
         };
     }, [id]);
 
+    // console.log(show);
+
     if (isLoading) {
         return <div>Data is being loaded...</div>;
     }
@@ -59,7 +66,35 @@ const Show = () => {
     if (error) {
         return <div>Error Occured : {error}</div>;
     }
-    return <div>This is show page</div>;
+    return (
+        <div>
+            <ShowMainData
+                image={show.image}
+                name={show.name}
+                rating={show.rating}
+                summary={show.summary}
+                tags={show.genres}
+            />
+            <div>
+                <h2>Details</h2>
+                <Details
+                    status={show.status}
+                    network={show.network}
+                    premiered={show.premiered}
+                />
+            </div>
+
+            <div>
+                <h2>Cast</h2>
+                <Cast cast={show._embedded.cast} />
+            </div>
+
+            <div>
+                <h2>Seasons</h2>
+                <Seasons seasons={show._embedded.seasons} />
+            </div>
+        </div>
+    );
 };
 
 export default Show;
