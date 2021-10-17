@@ -5,6 +5,9 @@ import { apiGet } from '../misc/config';
 const Home = () => {
     const [input, setInput] = useState('');
     const [results, setResults] = useState(null);
+    const [searchOption, setSearchOption] = useState('shows');
+
+    const isShowSearch = searchOption === 'shows';
 
     const onInputChange = ev => {
         setInput(ev.target.value);
@@ -12,9 +15,8 @@ const Home = () => {
 
     const onSearch = () => {
         // Call browser API to fetch remote data
-        apiGet(`/search/shows?q=${input}`).then(result => {
+        apiGet(`/search/${searchOption}?q=${input}`).then(result => {
             setResults(result);
-            console.log(result);
         });
     };
 
@@ -29,7 +31,7 @@ const Home = () => {
             return <div>No Results</div>;
         }
         if (results && results.length > 0) {
-            return (
+            return results[0].show ? (
                 <div>
                     {results.map(item => (
                         <div key={item.show.id}>
@@ -38,9 +40,22 @@ const Home = () => {
                         </div>
                     ))}
                 </div>
+            ) : (
+                <div>
+                    {results.map(item => (
+                        <div key={item.person.id}>
+                            <br />
+                            {item.person.name}
+                        </div>
+                    ))}
+                </div>
             );
         }
         return null;
+    };
+
+    const OnRadioChange = ev => {
+        setSearchOption(ev.target.value);
     };
 
     return (
@@ -50,10 +65,33 @@ const Home = () => {
             <br />
             <input
                 type="text"
+                placeholder="Search for something"
                 onChange={onInputChange}
                 onKeyDown={onKeyDown}
                 value={input}
             />
+            <div>
+                <label htmlFor="show-search">
+                    Shows
+                    <input
+                        id="show-search"
+                        type="radio"
+                        value="shows"
+                        checked={isShowSearch}
+                        onChange={OnRadioChange}
+                    />
+                </label>
+                <label htmlFor="actor-search">
+                    Actors
+                    <input
+                        id="actor-search"
+                        type="radio"
+                        value="people"
+                        checked={!isShowSearch}
+                        onChange={OnRadioChange}
+                    />
+                </label>
+            </div>
             <button type="button" onClick={onSearch}>
                 Search
             </button>
