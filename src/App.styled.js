@@ -54,8 +54,7 @@ export const NotFound = styled.div`
     }
 
     .notfound {
-        padding-top: 20%;
-        padding-left: 3%;
+        padding-top: 255px;
         text-align: center;
     }
 `;
