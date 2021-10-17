@@ -4,7 +4,11 @@ import { StyledShowCard } from './ShowCard.styled';
 
 const ShowCard = ({ id, image, name, summary }) => {
     const summaryAsText = summary
-        ? `${summary.replace(/<.+?>/g, '')}...`
+        ? `${summary
+              .split(' ')
+              .slice(0, 30)
+              .join(' ')
+              .replace(/<.+?>/g, '')}...`
         : 'No description';
 
     return (
