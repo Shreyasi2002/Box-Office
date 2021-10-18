@@ -14,6 +14,8 @@ import { LoadingAndErrors } from './Show.styled';
 import NOT_ADDED from '../images/nothing added.png';
 import { init } from '../components/Puzzle';
 
+import Title from '../components/Title';
+
 const Starred = () => {
     const [starred] = useShows();
 
@@ -40,44 +42,60 @@ const Starred = () => {
     }, [starred]);
 
     return (
-        <MainPageLayout>
-            {isLoading && (
-                <LoadingAndErrors>
-                    <div className="loading" />
-                    <p style={{ display: 'flex', justifyContent: 'center' }}>
-                        Shows are still Loading ...
-                    </p>
-                </LoadingAndErrors>
-            )}
-            {error && (
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    Error Occured : {error}
-                </div>
-            )}
-            {!isLoading && !shows && (
-                <div>
-                    <div
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            fontFamily: 'monospace',
-                            paddingLeft: '40px',
-                            textAlign: 'center',
-                        }}
-                    >
-                        Looks like no shows were added ... <br />
-                        {/* Try Out This Puzzle!! */}
-                    </div>
+        <div>
+            <Title
+                title="BOX OFFICE"
+                subtitle="Are you looking for a movie or an actor?"
+            />
+            <MainPageLayout>
+                {isLoading && (
+                    <LoadingAndErrors>
+                        <div className="loading" />
+                        <p
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                            }}
+                        >
+                            Shows are still Loading ...
+                        </p>
+                    </LoadingAndErrors>
+                )}
+                {error && (
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <img alt="nothing added" src={NOT_ADDED} />
+                        Error Occured : {error}
                     </div>
-                    {/* <div onLoad={init}>
+                )}
+                {!isLoading && !shows && (
+                    <div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                fontFamily: 'monospace',
+                                paddingLeft: '40px',
+                                textAlign: 'center',
+                            }}
+                        >
+                            Looks like no shows were added ... <br />
+                            {/* Try Out This Puzzle!! */}
+                        </div>
+                        <div
+                            style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                            }}
+                        >
+                            <img alt="nothing added" src={NOT_ADDED} />
+                        </div>
+                        {/* <div onLoad={init}>
                         <canvas id="canvas" />
                     </div> */}
-                </div>
-            )}
-            {!isLoading && !error && shows && <ShowGrid data={shows} />}
-        </MainPageLayout>
+                    </div>
+                )}
+                {!isLoading && !error && shows && <ShowGrid data={shows} />}
+            </MainPageLayout>
+        </div>
     );
 };
 

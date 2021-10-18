@@ -9,8 +9,12 @@ import {
     RadioInputsWrapper,
     SearchButtonWrapper,
     SearchInput,
+    WelcomeImage,
 } from './Home.styled';
+import Title from '../components/Title';
+
 import NO_RESULTS from '../images/no_results - sad.png';
+import WELCOME from '../images/welcome.png';
 
 const renderResults = results => {
     if (results && results.length === 0) {
@@ -86,45 +90,63 @@ const Home = () => {
     useWhyDidYouUpdate('home', { onInputChange, onKeyDown });
 
     return (
-        <MainPageLayout>
-            <br />
+        <div>
+            <div>
+                <Title
+                    title="BOX OFFICE"
+                    subtitle="Are you looking for a movie or an actor?"
+                />
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <WelcomeImage>
+                        <div className="image">
+                            <img src={WELCOME} alt="welcome" />
+                        </div>
+                    </WelcomeImage>
+                    <MainPageLayout>
+                        <br />
 
-            <SearchInput
-                type="text"
-                placeholder="Search for something"
-                onChange={onInputChange}
-                onKeyDown={onKeyDown}
-                value={input}
-            />
-            <RadioInputsWrapper>
-                <div>
-                    <CustomRadio
-                        label="Shows"
-                        id="show-search"
-                        value="shows"
-                        checked={isShowSearch}
-                        onChange={OnRadioChange}
-                    />
+                        <SearchInput
+                            type="text"
+                            placeholder="Search for something"
+                            onChange={onInputChange}
+                            onKeyDown={onKeyDown}
+                            value={input}
+                        />
+                        <RadioInputsWrapper>
+                            <div>
+                                <CustomRadio
+                                    label="Shows"
+                                    id="show-search"
+                                    value="shows"
+                                    checked={isShowSearch}
+                                    onChange={OnRadioChange}
+                                />
+                            </div>
+
+                            <div>
+                                <CustomRadio
+                                    label="Actors"
+                                    id="actor-search"
+                                    value="people"
+                                    checked={!isShowSearch}
+                                    onChange={OnRadioChange}
+                                />
+                            </div>
+                        </RadioInputsWrapper>
+
+                        <SearchButtonWrapper>
+                            <button type="button" onClick={onSearch}>
+                                Search
+                            </button>
+                            <br />
+                            <br />
+                            <br />
+                        </SearchButtonWrapper>
+                    </MainPageLayout>
                 </div>
-
-                <div>
-                    <CustomRadio
-                        label="Actors"
-                        id="actor-search"
-                        value="people"
-                        checked={!isShowSearch}
-                        onChange={OnRadioChange}
-                    />
-                </div>
-            </RadioInputsWrapper>
-
-            <SearchButtonWrapper>
-                <button type="button" onClick={onSearch}>
-                    Search
-                </button>
-            </SearchButtonWrapper>
+            </div>
             {renderResults(results)}
-        </MainPageLayout>
+        </div>
     );
 };
 export default Home;

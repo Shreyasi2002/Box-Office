@@ -48,3 +48,12 @@ export const SearchButtonWrapper = styled.div`
         }
     }
 `;
+
+export const WelcomeImage = styled.div`
+    padding: 0 -20px;
+    margin: -50px -90px;
+
+    .image {
+        float: left;
+    }
+`;
