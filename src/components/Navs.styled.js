@@ -7,6 +7,8 @@ export const NavList = styled.ul`
     list-style: none;
     margin: 0 0 30px;
     padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 `;
 
 export const LinkStyled = styled(Link)`

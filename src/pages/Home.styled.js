@@ -41,7 +41,8 @@ export const SearchButtonWrapper = styled.div`
         font-size: 15px;
         border: none;
         outline: none;
-        border-radius: 12px;
+        border-radius: 32px;
+        box-shadow: 0px 5px 15px -5px #0046d5;
         &:hover {
             cursor: pointer;
         }

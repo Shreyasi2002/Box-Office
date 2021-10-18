@@ -6,10 +6,12 @@ const RadioWrapper = styled.label`
     position: relative;
     padding-left: 25px;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 15px;
     user-select: none;
     font-weight: 700;
     line-height: 1.65;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     input {
         position: absolute;
