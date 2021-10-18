@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const NotFound = styled.div`
     font-family: 'Montserrat';
     h1 {
-        font-size: 200px;
+        font-size: 160px;
         margin: 10px;
         font-weight: 900;
         position: absolute;
@@ -54,7 +54,7 @@ export const NotFound = styled.div`
     }
 
     .notfound {
-        padding-top: 255px;
+        padding-top: 200px;
         text-align: center;
     }
 `;

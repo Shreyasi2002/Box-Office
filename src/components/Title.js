@@ -3,7 +3,9 @@ import { TitleWrapper } from './Title.styled';
 
 const Title = ({ title, subtitle }) => (
     <TitleWrapper>
-        <h1>{title}</h1>
+        <h1>
+            <b>{title}</b>
+        </h1>
         <p>{subtitle}</p>
     </TitleWrapper>
 );
