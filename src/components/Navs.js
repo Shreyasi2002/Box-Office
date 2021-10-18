@@ -13,6 +13,7 @@ const Navs = () => {
 
     return (
         <div>
+            <br />
             <NavList>
                 {LINKS.map(item => (
                     <li key={item.to}>

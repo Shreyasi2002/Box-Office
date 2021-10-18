@@ -9,7 +9,7 @@ export const TitleWrapper = styled.div`
         letter-spacing: 5px;
         text-transform: uppercase;
         margin: 0 0 10px;
-        font-size: 80px;
+        font-size: 100px;
         font-weight: 9000;
         text-shadow: 10px 14px 15px 5px #0046d8;
         font-family: 'Courier New', Courier, monospace;
