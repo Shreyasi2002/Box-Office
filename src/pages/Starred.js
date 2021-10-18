@@ -47,7 +47,7 @@ const Starred = () => {
             )}
             {!isLoading && !shows && (
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    It looks like no Shows were added
+                    Looks like no Shows were added ...
                 </div>
             )}
             {!isLoading && !error && shows && <ShowGrid data={shows} />}
