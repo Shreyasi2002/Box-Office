@@ -11,7 +11,7 @@ import GO_BACK from './images/Go back.png';
 
 const theme = {
     mainColors: {
-        blue: '#2400ff',
+        blue: '#4B0082',
         gray: '#c6c6c6',
         dark: '#353535',
     },
