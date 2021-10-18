@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Box-Office/static/css/main.893efc56.chunk.css",
-    "main.js": "/Box-Office/static/js/main.ad3feb49.chunk.js",
-    "main.js.map": "/Box-Office/static/js/main.ad3feb49.chunk.js.map",
+    "main.js": "/Box-Office/static/js/main.538a8065.chunk.js",
+    "main.js.map": "/Box-Office/static/js/main.538a8065.chunk.js.map",
     "runtime-main.js": "/Box-Office/static/js/runtime-main.109854e6.js",
     "runtime-main.js.map": "/Box-Office/static/js/runtime-main.109854e6.js.map",
     "static/js/2.84df9d75.chunk.js": "/Box-Office/static/js/2.84df9d75.chunk.js",
@@ -13,12 +13,15 @@
     "service-worker.js": "/Box-Office/service-worker.js",
     "service-worker.js.map": "/Box-Office/service-worker.js.map",
     "static/css/main.893efc56.chunk.css.map": "/Box-Office/static/css/main.893efc56.chunk.css.map",
-    "static/js/2.84df9d75.chunk.js.LICENSE.txt": "/Box-Office/static/js/2.84df9d75.chunk.js.LICENSE.txt"
+    "static/js/2.84df9d75.chunk.js.LICENSE.txt": "/Box-Office/static/js/2.84df9d75.chunk.js.LICENSE.txt",
+    "static/media/Go back.afbdbfac.png": "/Box-Office/static/media/Go back.afbdbfac.png",
+    "static/media/no_results - sad.d98395d7.png": "/Box-Office/static/media/no_results - sad.d98395d7.png",
+    "static/media/nothing added.963b56a7.png": "/Box-Office/static/media/nothing added.963b56a7.png"
   },
   "entrypoints": [
     "static/js/runtime-main.109854e6.js",
     "static/js/2.84df9d75.chunk.js",
     "static/css/main.893efc56.chunk.css",
-    "static/js/main.ad3feb49.chunk.js"
+    "static/js/main.538a8065.chunk.js"
   ]
 }
