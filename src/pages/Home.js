@@ -65,7 +65,7 @@ const Home = () => {
     return (
         <MainPageLayout>
             <br />
-            <br />
+
             <SearchInput
                 type="text"
                 placeholder="Search for something"
