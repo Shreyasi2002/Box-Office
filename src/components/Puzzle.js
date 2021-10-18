@@ -6,6 +6,8 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-unused-vars */
 
+// https://code.tutsplus.com/tutorials/create-an-html5-canvas-tile-swapping-puzzle--active-10747
+
 import NOT_ADDED from '../images/nothing added.png';
 
 const PUZZLE_DIFFICULTY = 4;
