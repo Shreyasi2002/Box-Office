@@ -1,9 +1,18 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-continue */
+/* eslint-disable no-var */
+/* eslint-disable vars-on-top */
+/* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react';
 import MainPageLayout from '../components/MainPageLayout';
 import { useShows } from '../misc/custom-hooks';
 import { apiGet } from '../misc/config';
 import ShowGrid from '../components/shows/ShowGrid';
 import { LoadingAndErrors } from './Show.styled';
+
+import NOT_ADDED from '../images/nothing added.png';
+import { init } from '../components/Puzzle';
 
 const Starred = () => {
     const [starred] = useShows();
@@ -46,8 +55,25 @@ const Starred = () => {
                 </div>
             )}
             {!isLoading && !shows && (
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    Looks like no Shows were added ...
+                <div>
+                    <div
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            fontFamily: 'monospace',
+                            paddingLeft: '40px',
+                            textAlign: 'center',
+                        }}
+                    >
+                        Looks like no shows were added ... <br />
+                        {/* Try Out This Puzzle!! */}
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <img alt="nothing added" src={NOT_ADDED} />
+                    </div>
+                    {/* <div onLoad={init}>
+                        <canvas id="canvas" />
+                    </div> */}
                 </div>
             )}
             {!isLoading && !error && shows && <ShowGrid data={shows} />}
