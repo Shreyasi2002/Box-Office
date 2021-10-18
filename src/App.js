@@ -7,6 +7,8 @@ import Show from './pages/Show';
 import Starred from './pages/Starred';
 import { NotFound } from './App.styled';
 
+import GO_BACK from './images/Go back.png';
+
 const theme = {
     mainColors: {
         blue: '#2400ff',
@@ -42,6 +44,10 @@ function App() {
                                 <br /> had its name changed or is temporarily
                                 unavailable.
                             </p>
+                            <br />
+                            <img alt="go back" src={GO_BACK} />
+                            <br />
+                            <br />
                             <a href=".">GO TO HOMEPAGE</a>
                         </div>
                     </NotFound>

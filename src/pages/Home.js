@@ -10,15 +10,38 @@ import {
     SearchButtonWrapper,
     SearchInput,
 } from './Home.styled';
+import NO_RESULTS from '../images/no_results - sad.png';
 
 const renderResults = results => {
     if (results && results.length === 0) {
         return (
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                No Results
+            <div>
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        fontFamily: 'monospace',
+                    }}
+                >
+                    No Results Found
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img alt="nothing found" src={NO_RESULTS} />
+                </div>
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        paddingLeft: '10px',
+                        fontFamily: 'monospace',
+                    }}
+                >
+                    Dont Be Sad! We will find it! ......
+                </div>
             </div>
         );
     }
+
     if (results && results.length > 0) {
         return results[0].show ? (
             <ShowGrid data={results} />
