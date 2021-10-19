@@ -167,6 +167,9 @@ const Home = () => {
                 />
             </ConfettiFadeOut>
             {renderResults(results)}
+            <br />
+            <br />
+            <br />
         </div>
     );
 };

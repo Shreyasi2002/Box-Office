@@ -8,7 +8,7 @@ const Details = ({ status, premiered, network, runtime, officialSite }) => (
             Status: <span>{status}</span>
         </p>
         <p>
-            Average Runtime: <span>{runtime} mins</span>
+            Average Runtime: <b>{runtime ? `${runtime} mins` : 'N/A'}</b>
         </p>
         <p>
             Premiered <b>{premiered}</b> {network ? `on ${network.name}` : null}
