@@ -1,4 +1,9 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable prefer-const */
 import React, { useState, useCallback } from 'react';
+import Confetti from 'react-confetti';
+import useWindowSize from 'react-use/lib/useWindowSize';
+
 import ActorGrid from '../components/actors/ActorGrid';
 import CustomRadio from '../components/CustomRadio';
 import MainPageLayout from '../components/MainPageLayout';
@@ -6,6 +11,7 @@ import ShowGrid from '../components/shows/ShowGrid';
 import { apiGet } from '../misc/config';
 import { useLastQuery, useWhyDidYouUpdate } from '../misc/custom-hooks';
 import {
+    ConfettiFadeOut,
     RadioInputsWrapper,
     SearchButtonWrapper,
     SearchInput,
@@ -15,6 +21,8 @@ import Title from '../components/Title';
 
 import NO_RESULTS from '../images/no_results - sad.png';
 import WELCOME from '../images/welcome.png';
+
+import './Home.css';
 
 const renderResults = results => {
     if (results && results.length === 0) {
@@ -89,6 +97,8 @@ const Home = () => {
 
     useWhyDidYouUpdate('home', { onInputChange, onKeyDown });
 
+    const { width, height } = useWindowSize();
+
     return (
         <div>
             <div>
@@ -141,12 +151,21 @@ const Home = () => {
                                 Search
                             </button>
                             <br />
-                            <br />
-                            <br />
                         </SearchButtonWrapper>
                     </MainPageLayout>
                 </div>
             </div>
+
+            <div id="welcome">Welcome to BOX OFFICE!</div>
+            <ConfettiFadeOut>
+                <Confetti
+                    width={width}
+                    height={height}
+                    opacity={0.8}
+                    numberOfPieces={100}
+                    tweenDuration={10000}
+                />
+            </ConfettiFadeOut>
             {renderResults(results)}
         </div>
     );

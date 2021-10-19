@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const MainDataWrapper = styled.div`
     display: flex;
     margin-bottom: 40px;
-
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     img {
         min-width: 250px;
         width: 300px;
@@ -15,6 +16,11 @@ export const MainDataWrapper = styled.div`
     .text-side {
         margin-left: 20px;
         .summary {
+            color: #5f5f5f;
+            line-height: 1.5;
+        }
+
+        .language {
             color: #5f5f5f;
             line-height: 1.5;
         }
@@ -37,12 +43,15 @@ export const Headline = styled.div`
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     h1 {
         margin: 0;
         border-right: 1px solid #ddd;
         padding-right: 25px;
         margin-right: 20px;
+        font-size: 35px;
     }
 
     div {
@@ -57,6 +66,8 @@ export const Headline = styled.div`
 export const TagList = styled.div`
     display: inline-flex;
     flex-wrap: wrap;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     span {
         margin: 6px;

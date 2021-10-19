@@ -1,38 +1,35 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-param-reassign */
-/* eslint-disable radix */
 /* eslint-disable no-continue */
-/* eslint-disable vars-on-top */
-/* eslint-disable no-var */
 /* eslint-disable no-use-before-define */
-/* eslint-disable no-unused-vars */
-
-// https://code.tutsplus.com/tutorials/create-an-html5-canvas-tile-swapping-puzzle--active-10747
 
 import NOT_ADDED from '../images/nothing added.png';
+import './Puzzle.css';
 
-const PUZZLE_DIFFICULTY = 4;
+const PUZZLE_DIFFICULTY = 8;
 const PUZZLE_HOVER_TINT = '#009900';
 
-var _stage;
-var _canvas;
+let _stage;
+let _canvas;
 
-var _img;
-var _pieces;
-var _puzzleWidth;
-var _puzzleHeight;
-var _pieceWidth;
-var _pieceHeight;
-var _currentPiece;
-var _currentDropPiece;
+let _img;
+let _pieces;
+let _puzzleWidth;
+let _puzzleHeight;
+let _pieceWidth;
+let _pieceHeight;
+let _currentPiece;
+let _currentDropPiece;
 
-var _mouse;
+let _mouse;
+let gameWin = false;
 
 export function init() {
     _img = new Image();
     _img.addEventListener('load', onImage, false);
     _img.src = NOT_ADDED;
 }
-function onImage(e) {
+function onImage() {
     _pieceWidth = Math.floor(_img.width / PUZZLE_DIFFICULTY);
     _pieceHeight = Math.floor(_img.height / PUZZLE_DIFFICULTY);
     _puzzleWidth = _pieceWidth * PUZZLE_DIFFICULTY;
@@ -68,20 +65,20 @@ function initPuzzle() {
 }
 function createTitle(msg) {
     _stage.fillStyle = '#000000';
-    _stage.globalAlpha = 0.4;
-    _stage.fillRect(100, _puzzleHeight - 40, _puzzleWidth - 200, 40);
+    _stage.globalAlpha = 0.5;
+    _stage.fillRect(50, _puzzleHeight - 40, _puzzleWidth - 100, 40);
     _stage.fillStyle = '#FFFFFF';
     _stage.globalAlpha = 1;
     _stage.textAlign = 'center';
     _stage.textBaseline = 'middle';
-    _stage.font = '20px Arial';
+    _stage.font = '20px monospace';
     _stage.fillText(msg, _puzzleWidth / 2, _puzzleHeight - 20);
 }
 function buildPieces() {
-    var i;
-    var piece;
-    var xPos = 0;
-    var yPos = 0;
+    let i;
+    let piece;
+    let xPos = 0;
+    let yPos = 0;
     for (i = 0; i < PUZZLE_DIFFICULTY * PUZZLE_DIFFICULTY; i++) {
         piece = {};
         piece.sx = xPos;
@@ -98,10 +95,10 @@ function buildPieces() {
 function shufflePuzzle() {
     _pieces = shuffleArray(_pieces);
     _stage.clearRect(0, 0, _puzzleWidth, _puzzleHeight);
-    var i;
-    var piece;
-    var xPos = 0;
-    var yPos = 0;
+    let i;
+    let piece;
+    let xPos = 0;
+    let yPos = 0;
     for (i = 0; i < _pieces.length; i++) {
         piece = _pieces[i];
         piece.xPos = xPos;
@@ -127,9 +124,9 @@ function shufflePuzzle() {
     document.onmousedown = onPuzzleClick;
 }
 function onPuzzleClick(e) {
-    if (e.layerX || e.layerX === 0) {
-        _mouse.x = e.layerX - _canvas.offsetLeft;
-        _mouse.y = e.layerY - _canvas.offsetTop;
+    if (e.clientX || e.clientX === 0) {
+        _mouse.x = e.clientX - _canvas.offsetLeft;
+        _mouse.y = e.clientY - _canvas.offsetTop;
     } else if (e.offsetX || e.offsetX === 0) {
         _mouse.x = e.offsetX - _canvas.offsetLeft;
         _mouse.y = e.offsetY - _canvas.offsetTop;
@@ -161,8 +158,8 @@ function onPuzzleClick(e) {
     }
 }
 function checkPieceClicked() {
-    var i;
-    var piece;
+    let i;
+    let piece;
     for (i = 0; i < _pieces.length; i++) {
         piece = _pieces[i];
         if (
@@ -180,16 +177,16 @@ function checkPieceClicked() {
 }
 function updatePuzzle(e) {
     _currentDropPiece = null;
-    if (e.layerX || e.layerX === 0) {
-        _mouse.x = e.layerX - _canvas.offsetLeft;
-        _mouse.y = e.layerY - _canvas.offsetTop;
+    if (e.clientX || e.clientX === 0) {
+        _mouse.x = e.clientX - _canvas.offsetLeft;
+        _mouse.y = e.clientY - _canvas.offsetTop;
     } else if (e.offsetX || e.offsetX === 0) {
         _mouse.x = e.offsetX - _canvas.offsetLeft;
         _mouse.y = e.offsetY - _canvas.offsetTop;
     }
     _stage.clearRect(0, 0, _puzzleWidth, _puzzleHeight);
-    var i;
-    var piece;
+    let i;
+    let piece;
     for (i = 0; i < _pieces.length; i++) {
         piece = _pieces[i];
         if (piece === _currentPiece) {
@@ -251,11 +248,11 @@ function updatePuzzle(e) {
         _pieceHeight
     );
 }
-function pieceDropped(e) {
+function pieceDropped() {
     document.onmousemove = null;
     document.onmouseup = null;
     if (_currentDropPiece != null) {
-        var tmp = { xPos: _currentPiece.xPos, yPos: _currentPiece.yPos };
+        const tmp = { xPos: _currentPiece.xPos, yPos: _currentPiece.yPos };
         _currentPiece.xPos = _currentDropPiece.xPos;
         _currentPiece.yPos = _currentDropPiece.yPos;
         _currentDropPiece.xPos = tmp.xPos;
@@ -265,9 +262,9 @@ function pieceDropped(e) {
 }
 function resetPuzzleAndCheckWin() {
     _stage.clearRect(0, 0, _puzzleWidth, _puzzleHeight);
-    var gameWin = true;
-    var i;
-    var piece;
+    gameWin = true;
+    let i;
+    let piece;
     for (i = 0; i < _pieces.length; i++) {
         piece = _pieces[i];
         _stage.drawImage(
@@ -287,20 +284,25 @@ function resetPuzzleAndCheckWin() {
         }
     }
     if (gameWin) {
-        setTimeout(gameOver, 500);
+        setTimeout(gameOver, 1000);
     }
 }
 function gameOver() {
     document.onmousedown = null;
     document.onmousemove = null;
     document.onmouseup = null;
+    document.body.insertAdjacentHTML(
+        'afterend',
+        '<div id="wonGame">CONGRATULATIONS!!!</div>'
+    );
+
     initPuzzle();
 }
 function shuffleArray(o) {
     for (
-        var j, x, i = o.length;
+        let j, x, i = o.length;
         i;
-        j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x
+        j = parseInt(Math.random() * i, 10), x = o[--i], o[i] = o[j], o[j] = x
     );
     return o;
 }

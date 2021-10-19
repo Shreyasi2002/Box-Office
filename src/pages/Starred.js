@@ -1,17 +1,12 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-continue */
-/* eslint-disable no-var */
-/* eslint-disable vars-on-top */
-/* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react';
+// import Confetti from 'react-confetti';
+
 import MainPageLayout from '../components/MainPageLayout';
 import { useShows } from '../misc/custom-hooks';
 import { apiGet } from '../misc/config';
 import ShowGrid from '../components/shows/ShowGrid';
 import { LoadingAndErrors } from './Show.styled';
 
-import NOT_ADDED from '../images/nothing added.png';
 import { init } from '../components/Puzzle';
 
 import Title from '../components/Title';
@@ -77,8 +72,11 @@ const Starred = () => {
                                 textAlign: 'center',
                             }}
                         >
+                            <br />
                             Looks like no shows were added ... <br />
-                            {/* Try Out This Puzzle!! */}
+                            Try Out This Puzzle in the meantime !!
+                            <br />
+                            <br />
                             <br />
                         </div>
                         <div
@@ -86,12 +84,11 @@ const Starred = () => {
                                 display: 'flex',
                                 justifyContent: 'center',
                             }}
+                            onLoad={init()}
                         >
-                            <img alt="nothing added" src={NOT_ADDED} />
+                            <canvas id="canvas" />
                         </div>
-                        {/* <div onLoad={init}>
-                        <canvas id="canvas" />
-                    </div> */}
+                        <br />
                     </div>
                 )}
                 {!isLoading && !error && shows && <ShowGrid data={shows} />}

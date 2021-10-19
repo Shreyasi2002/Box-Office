@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router';
 import Cast from '../components/shows/Cast';
@@ -8,6 +9,8 @@ import ShowMainData from '../components/shows/ShowMainData';
 
 import { apiGet } from '../misc/config';
 import { InfoBlock, LoadingAndErrors, ShowPageWrapper } from './Show.styled';
+
+import ImageSlider from '../components/shows/Image-Slider/ImageSlider';
 
 const initialState = {
     show: null,
@@ -40,7 +43,9 @@ const Show = () => {
     useEffect(() => {
         let isMounted = true;
 
-        apiGet(`/shows/${id}?embed[]=seasons&embed[]=episodes&embed[]=cast`)
+        apiGet(
+            `/shows/${id}?embed[]=seasons&embed[]=episodes&embed[]=cast&embed[]=images`
+        )
             .then(results => {
                 setTimeout(() => {
                     if (isMounted) {
@@ -63,7 +68,9 @@ const Show = () => {
         return (
             <LoadingAndErrors>
                 <div className="loading" />
-                <h3>Data is being loaded ...</h3>
+                <h3 style={{ fontFamily: 'monospace' }}>
+                    Data is being loaded ...
+                </h3>
             </LoadingAndErrors>
         );
     }
@@ -88,24 +95,32 @@ const Show = () => {
                 name={show.name}
                 rating={show.rating}
                 summary={show.summary}
+                language={show.language}
                 tags={show.genres}
             />
             <InfoBlock>
-                <h2>Details</h2>
+                <h2 style={{ fontSize: '27px' }}>Details</h2>
                 <Details
                     status={show.status}
+                    runtime={show.runtime}
                     network={show.network}
                     premiered={show.premiered}
+                    officialSite={show.officialSite}
                 />
             </InfoBlock>
 
             <InfoBlock>
-                <h2>Seasons</h2>
+                <h2 style={{ fontSize: '27px' }}>Images</h2>
+                <ImageSlider slides={show._embedded.images} />
+            </InfoBlock>
+
+            <InfoBlock>
+                <h2 style={{ fontSize: '27px' }}>Seasons</h2>
                 <Seasons seasons={show._embedded.seasons} />
             </InfoBlock>
 
             <InfoBlock>
-                <h2>Cast</h2>
+                <h2 style={{ fontSize: '27px' }}>Cast</h2>
                 <Cast cast={show._embedded.cast} />
             </InfoBlock>
         </ShowPageWrapper>

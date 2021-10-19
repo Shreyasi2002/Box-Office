@@ -18,9 +18,16 @@ export const ShowPageWrapper = styled.div`
 
 export const InfoBlock = styled.div`
     margin-bottom: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     h2 {
         margin: 0;
         margin-bottom: 30px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #ddd;
+        border-right: 1px;
+        padding-right: 25px;
+        margin-right: 20px;
         font-size: 22px;
     }
 `;
@@ -38,7 +45,8 @@ export const LoadingAndErrors = styled.div`
         content: '';
         width: 100px;
         height: 100px;
-        border: 30px solid #dddddd;
+        border: 30px solid aliceblue;
+        border-top: 35%;
         border-top-color: blue;
         border-radius: 50%;
         animation: loading 1s ease-in infinite;

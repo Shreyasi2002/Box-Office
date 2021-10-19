@@ -1,0 +1,28 @@
+#welcome {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 30px 0;
+    background-image: url(../images/background.jpeg);
+    color: #fff;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    display: block;
+    box-shadow: 50px;
+    opacity: 0;
+    animation: fadeOut 20s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
