@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router';
 import Cast from '../components/shows/Cast';
@@ -8,6 +9,8 @@ import ShowMainData from '../components/shows/ShowMainData';
 
 import { apiGet } from '../misc/config';
 import { InfoBlock, LoadingAndErrors, ShowPageWrapper } from './Show.styled';
+
+import ImageSlider from '../components/shows/Image-Slider/ImageSlider';
 
 const initialState = {
     show: null,
@@ -40,7 +43,9 @@ const Show = () => {
     useEffect(() => {
         let isMounted = true;
 
-        apiGet(`/shows/${id}?embed[]=seasons&embed[]=episodes&embed[]=cast`)
+        apiGet(
+            `/shows/${id}?embed[]=seasons&embed[]=episodes&embed[]=cast&embed[]=images`
+        )
             .then(results => {
                 setTimeout(() => {
                     if (isMounted) {
@@ -102,6 +107,11 @@ const Show = () => {
                     premiered={show.premiered}
                     officialSite={show.officialSite}
                 />
+            </InfoBlock>
+
+            <InfoBlock>
+                <h2 style={{ fontSize: '27px' }}>Images</h2>
+                <ImageSlider slides={show._embedded.images} />
             </InfoBlock>
 
             <InfoBlock>

@@ -51,6 +51,7 @@ export const Headline = styled.div`
         border-right: 1px solid #ddd;
         padding-right: 25px;
         margin-right: 20px;
+        font-size: 35px;
     }
 
     div {

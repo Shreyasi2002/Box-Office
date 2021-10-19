@@ -23,6 +23,11 @@ export const InfoBlock = styled.div`
     h2 {
         margin: 0;
         margin-bottom: 30px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #ddd;
+        border-right: 1px;
+        padding-right: 25px;
+        margin-right: 20px;
         font-size: 22px;
     }
 `;
