@@ -18,6 +18,8 @@ export const ShowPageWrapper = styled.div`
 
 export const InfoBlock = styled.div`
     margin-bottom: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     h2 {
         margin: 0;
         margin-bottom: 30px;

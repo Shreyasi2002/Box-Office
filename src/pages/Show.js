@@ -63,7 +63,9 @@ const Show = () => {
         return (
             <LoadingAndErrors>
                 <div className="loading" />
-                <h3>Data is being loaded ...</h3>
+                <h3 style={{ fontFamily: 'monospace' }}>
+                    Data is being loaded ...
+                </h3>
             </LoadingAndErrors>
         );
     }
@@ -88,24 +90,27 @@ const Show = () => {
                 name={show.name}
                 rating={show.rating}
                 summary={show.summary}
+                language={show.language}
                 tags={show.genres}
             />
             <InfoBlock>
-                <h2>Details</h2>
+                <h2 style={{ fontSize: '27px' }}>Details</h2>
                 <Details
                     status={show.status}
+                    runtime={show.runtime}
                     network={show.network}
                     premiered={show.premiered}
+                    officialSite={show.officialSite}
                 />
             </InfoBlock>
 
             <InfoBlock>
-                <h2>Seasons</h2>
+                <h2 style={{ fontSize: '27px' }}>Seasons</h2>
                 <Seasons seasons={show._embedded.seasons} />
             </InfoBlock>
 
             <InfoBlock>
-                <h2>Cast</h2>
+                <h2 style={{ fontSize: '27px' }}>Cast</h2>
                 <Cast cast={show._embedded.cast} />
             </InfoBlock>
         </ShowPageWrapper>

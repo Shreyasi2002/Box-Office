@@ -1,13 +1,24 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
 import { DetailsWrapper } from './Details.styled';
 
-const Details = ({ status, premiered, network }) => (
+const Details = ({ status, premiered, network, runtime, officialSite }) => (
     <DetailsWrapper>
         <p>
             Status: <span>{status}</span>
         </p>
         <p>
-            Premiered {premiered} {network ? `on ${network.name}` : null}
+            Average Runtime: <span>{runtime} mins</span>
+        </p>
+        <p>
+            Premiered <b>{premiered}</b> {network ? `on ${network.name}` : null}
+        </p>
+        <p>
+            Official Site:{' '}
+            <a href={officialSite} target="_blank">
+                {' '}
+                Click Here{' '}
+            </a>
         </p>
     </DetailsWrapper>
 );
