@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Box-Office/static/css/main.893efc56.chunk.css",
-    "main.js": "/Box-Office/static/js/main.1bbc3f5e.chunk.js",
-    "main.js.map": "/Box-Office/static/js/main.1bbc3f5e.chunk.js.map",
+    "main.js": "/Box-Office/static/js/main.23e3ae8c.chunk.js",
+    "main.js.map": "/Box-Office/static/js/main.23e3ae8c.chunk.js.map",
     "runtime-main.js": "/Box-Office/static/js/runtime-main.109854e6.js",
     "runtime-main.js.map": "/Box-Office/static/js/runtime-main.109854e6.js.map",
     "static/js/2.84df9d75.chunk.js": "/Box-Office/static/js/2.84df9d75.chunk.js",
@@ -17,13 +17,13 @@
     "static/media/Go back.afbdbfac.png": "/Box-Office/static/media/Go back.afbdbfac.png",
     "static/media/no_results - sad.d98395d7.png": "/Box-Office/static/media/no_results - sad.d98395d7.png",
     "static/media/not-found.1668c579.png": "/Box-Office/static/media/not-found.1668c579.png",
-    "static/media/nothing added.963b56a7.png": "/Box-Office/static/media/nothing added.963b56a7.png",
-    "static/media/welcome.52ac5d75.png": "/Box-Office/static/media/welcome.52ac5d75.png"
+    "static/media/nothing added.2c0d901f.png": "/Box-Office/static/media/nothing added.2c0d901f.png",
+    "static/media/welcome.6468cbb6.png": "/Box-Office/static/media/welcome.6468cbb6.png"
   },
   "entrypoints": [
     "static/js/runtime-main.109854e6.js",
     "static/js/2.84df9d75.chunk.js",
     "static/css/main.893efc56.chunk.css",
-    "static/js/main.1bbc3f5e.chunk.js"
+    "static/js/main.23e3ae8c.chunk.js"
   ]
 }
