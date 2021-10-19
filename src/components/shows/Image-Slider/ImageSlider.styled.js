@@ -10,9 +10,9 @@ export const Images = styled.div`
 
     .image {
         min-width: 250px;
-        max-width: 700px;
+        max-width: 900px;
         max-height: 450px;
-        min-height: 140px;
+        min-height: 240px;
         border: 1px solid #ddd;
         border-radius: 40px;
     }
@@ -20,7 +20,7 @@ export const Images = styled.div`
     .right-arrow {
         position: absolute;
         top: 40%;
-        right: 22px;
+        right: 12px;
         font-size: 3rem;
         color: #000;
         z-index: 10;
@@ -31,7 +31,7 @@ export const Images = styled.div`
     .left-arrow {
         position: absolute;
         top: 40%;
-        left: 22px;
+        left: 12px;
         font-size: 3rem;
         color: #000;
         z-index: 10;
@@ -48,5 +48,25 @@ export const Images = styled.div`
         opacity: 1;
         transition-duration: 1s;
         transform: scale(1.08);
+    }
+
+    @media only screen and (max-width: 768px) {
+        flex-wrap: wrap;
+        .image {
+            margin-bottom: 20px;
+            margin: auto;
+        }
+    }
+    @media only screen and (max-width: 780px) {
+        flex-wrap: wrap;
+        .image {
+            margin-bottom: 20px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            max-width: 95%;
+            min-height: 100px;
+            height: unset;
+        }
     }
 `;
