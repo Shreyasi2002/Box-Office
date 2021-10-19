@@ -74,7 +74,7 @@ const Starred = () => {
                         >
                             <br />
                             Looks like no shows were added ... <br />
-                            Try Out This Puzzle in the meantime !!
+                            You can Try Out This Puzzle in the meantime !
                             <br />
                             <br />
                             <br />
@@ -83,10 +83,26 @@ const Starred = () => {
                             style={{
                                 display: 'flex',
                                 justifyContent: 'center',
+                                paddingLeft: '25px',
                             }}
                             onLoad={init()}
                         >
                             <canvas id="canvas" />
+                        </div>
+                        <div
+                            style={{
+                                color: 'darkgray',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                fontFamily: 'monospace',
+                                paddingLeft: '40px',
+                                textAlign: 'center',
+                                fontSize: '15px',
+                            }}
+                        >
+                            <br />
+                            Please note that the above code is not compatible
+                            for mobile devices
                         </div>
                         <br />
                     </div>

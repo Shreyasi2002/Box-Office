@@ -6,7 +6,7 @@
 import NOT_ADDED from '../images/nothing added.png';
 import './Puzzle.css';
 
-const PUZZLE_DIFFICULTY = 8;
+const PUZZLE_DIFFICULTY = 3;
 const PUZZLE_HOVER_TINT = '#009900';
 
 let _stage;
