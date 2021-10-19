@@ -51,7 +51,7 @@ export const SearchButtonWrapper = styled.div`
 
 export const WelcomeImage = styled.div`
     padding: 0 -20px;
-    margin: -50px -90px;
+    margin: -45px -75px;
 
     .image {
         float: left;

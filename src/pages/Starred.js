@@ -79,6 +79,7 @@ const Starred = () => {
                         >
                             Looks like no shows were added ... <br />
                             {/* Try Out This Puzzle!! */}
+                            <br />
                         </div>
                         <div
                             style={{

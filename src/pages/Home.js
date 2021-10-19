@@ -102,7 +102,9 @@ const Home = () => {
                             <img src={WELCOME} alt="welcome" />
                         </div>
                     </WelcomeImage>
+
                     <MainPageLayout>
+                        <br />
                         <br />
 
                         <SearchInput
