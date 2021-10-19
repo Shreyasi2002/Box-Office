@@ -16,8 +16,7 @@ const Details = ({ status, premiered, network, runtime, officialSite }) => (
         <p>
             Official Site:{' '}
             <a href={officialSite} target="_blank">
-                {' '}
-                Click Here{' '}
+                {officialSite ? ' Click Here ' : 'N/A'}
             </a>
         </p>
     </DetailsWrapper>
