@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+// import Confetti from 'react-confetti';
+
 import MainPageLayout from '../components/MainPageLayout';
 import { useShows } from '../misc/custom-hooks';
 import { apiGet } from '../misc/config';

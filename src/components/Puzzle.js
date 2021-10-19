@@ -1,8 +1,10 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-continue */
 /* eslint-disable no-use-before-define */
 
 import NOT_ADDED from '../images/nothing added.png';
+import './Puzzle.css';
 
 const PUZZLE_DIFFICULTY = 3;
 const PUZZLE_HOVER_TINT = '#009900';
@@ -20,6 +22,7 @@ let _currentPiece;
 let _currentDropPiece;
 
 let _mouse;
+let gameWin = false;
 
 export function init() {
     _img = new Image();
@@ -120,7 +123,7 @@ function shufflePuzzle() {
     }
     document.onmousedown = onPuzzleClick;
 }
-export function onPuzzleClick(e) {
+function onPuzzleClick(e) {
     if (e.clientX || e.clientX === 0) {
         _mouse.x = e.clientX - _canvas.offsetLeft;
         _mouse.y = e.clientY - _canvas.offsetTop;
@@ -259,7 +262,7 @@ function pieceDropped() {
 }
 function resetPuzzleAndCheckWin() {
     _stage.clearRect(0, 0, _puzzleWidth, _puzzleHeight);
-    let gameWin = true;
+    gameWin = true;
     let i;
     let piece;
     for (i = 0; i < _pieces.length; i++) {
@@ -281,13 +284,17 @@ function resetPuzzleAndCheckWin() {
         }
     }
     if (gameWin) {
-        setTimeout(gameOver, 500);
+        setTimeout(gameOver, 1000);
     }
 }
 function gameOver() {
     document.onmousedown = null;
     document.onmousemove = null;
     document.onmouseup = null;
+    document.body.insertAdjacentHTML(
+        'afterend',
+        '<div id="wonGame">CONGRATULATIONS!!!</div>'
+    );
 
     initPuzzle();
 }
