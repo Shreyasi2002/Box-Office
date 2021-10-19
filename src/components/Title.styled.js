@@ -12,7 +12,7 @@ export const TitleWrapper = styled.div`
         font-size: 90px;
         font-weight: 9000;
         text-shadow: 10px 14px 15px 5px #0046d8;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: 'MontSerrat';
 
         transform: translateX(0%);
         -webkit-background-clip: text;
