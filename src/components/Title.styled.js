@@ -14,7 +14,7 @@ export const TitleWrapper = styled.div`
         text-shadow: 10px 14px 15px 5px #0046d8;
         font-family: 'MontSerrat';
 
-        transform: translateX(0%);
+        transform: translateX(2%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-size: cover;
@@ -30,5 +30,6 @@ export const TitleWrapper = styled.div`
         font-size: 20px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
             'Lucida Sans', Arial, sans-serif;
+        padding-left: 5%;
     }
 `;
