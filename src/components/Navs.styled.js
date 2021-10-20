@@ -12,8 +12,8 @@ export const NavList = styled.ul`
 `;
 
 export const LinkStyled = styled(Link)`
-    margin: 0 5px;
-    padding: 3px 10px;
+    margin: 0 15px;
+    padding: 3px 20px;
     position: relative;
     text-decoration: navy;
     text-align: center;

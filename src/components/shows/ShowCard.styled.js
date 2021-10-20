@@ -7,14 +7,8 @@ export const StyledShowCard = styled(SearchCard)`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        a {
-            text-decoration-color: #000;
-            color: #000;
-            &:hover {
-                text-decoration-color: blue;
-                color: blue;
-            }
-        }
+        position: relative;
+
         button {
             outline: none;
             border: 1px solid #8e8e8e;
@@ -28,5 +22,31 @@ export const StyledShowCard = styled(SearchCard)`
                 cursor: pointer;
             }
         }
+        .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 7px 0;
+            border-radius: 6px;
+            transition: opacity 0.6s;
+            box-sizing: inherit;
+
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+            top: -5px;
+            left: 20%;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        &:hover .tooltiptext {
+            visibility: visible;
+        }
+    }
+
+    img:hover {
+        opacity: 0.6;
     }
 `;

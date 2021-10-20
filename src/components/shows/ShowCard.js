@@ -1,13 +1,14 @@
+/* eslint-disable no-unused-vars */
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
-import { Star } from '../styled';
+import { Star, Heart } from '../styled';
 import { StyledShowCard } from './ShowCard.styled';
 
 const ShowCard = ({ id, image, name, summary, onStarClick, isStarred }) => {
     const summaryAsText = summary
         ? `${summary
               .split(' ')
-              .slice(0, 30)
+              .slice(0, 15)
               .join(' ')
               .replace(/<.+?>/g, '')}...`
         : 'No description';
@@ -15,7 +16,9 @@ const ShowCard = ({ id, image, name, summary, onStarClick, isStarred }) => {
     return (
         <StyledShowCard>
             <div className="img-wrapper">
-                <img src={image} alt="show" />
+                <Link to={`/show/${id}`}>
+                    <img src={image} alt="show" />
+                </Link>
             </div>
 
             <h1>{name}</h1>
@@ -23,12 +26,11 @@ const ShowCard = ({ id, image, name, summary, onStarClick, isStarred }) => {
             <p>{summaryAsText}</p>
 
             <div className="btns">
-                <Link to={`/show/${id}`}>Read more</Link>
                 <button type="button" onClick={onStarClick}>
-                    <Star active={isStarred} />
+                    <Heart active={isStarred} />
+                    <span className="tooltiptext">Add to Favorites</span>
                 </button>
             </div>
-            <br />
         </StyledShowCard>
     );
 };

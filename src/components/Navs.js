@@ -4,8 +4,8 @@ import { useLocation } from 'react-router';
 import { LinkStyled, NavList } from './Navs.styled';
 
 const LINKS = [
-    { to: '/', text: 'Home Page' },
-    { to: '/starred', text: 'Starred Page' },
+    { to: '/', text: 'Home' },
+    { to: '/starred', text: 'Favorites' },
 ];
 
 const Navs = () => {

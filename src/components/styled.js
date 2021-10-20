@@ -24,6 +24,7 @@ export const SearchCard = styled.div`
             object-fit: cover;
             height: 100%;
             width: 100%;
+            position: relative;
         }
     }
 
@@ -54,4 +55,19 @@ export const Star = styled.div`
         2% 35%,
         39% 35%
     );
+`;
+
+export const Heart = styled.div`
+    display: inline-block;
+    height: 15px;
+    text-align: center;
+    width: 15px;
+    &:before {
+        color: ${props => (props.active ? '#f3166e' : '#ddd')};
+        content: '❤';
+        font-size: 3.6em;
+        position: relative;
+        bottom: 120%;
+        right: 25%;
+    }
 `;
