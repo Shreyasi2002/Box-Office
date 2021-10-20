@@ -28,7 +28,11 @@ const ShowCard = ({ id, image, name, summary, onStarClick, isStarred }) => {
             <div className="btns">
                 <button type="button" onClick={onStarClick}>
                     <Heart active={isStarred} />
-                    <span className="tooltiptext">Add to Favorites</span>
+                    <span className="tooltiptext">
+                        {!isStarred
+                            ? 'Add to Favorites'
+                            : 'Remove from Favorites'}
+                    </span>
                 </button>
             </div>
         </StyledShowCard>

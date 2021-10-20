@@ -24,12 +24,12 @@ export const StyledShowCard = styled(SearchCard)`
         }
         .tooltiptext {
             visibility: hidden;
-            width: 120px;
+            width: 150px;
             background-color: black;
             color: #fff;
             text-align: center;
             padding: 7px 0;
-            border-radius: 6px;
+            border-radius: 10px;
             transition: opacity 0.6s;
             box-sizing: inherit;
 
