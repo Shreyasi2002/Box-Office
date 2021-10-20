@@ -10,8 +10,8 @@ export const Images = styled.div`
 
     .image {
         min-width: 250px;
-        max-width: 900px;
-        max-height: 450px;
+        max-width: 960px;
+        max-height: 720px;
         min-height: 240px;
         border: 1px solid #ddd;
         border-radius: 40px;
@@ -22,7 +22,7 @@ export const Images = styled.div`
         top: 40%;
         right: 12px;
         font-size: 3rem;
-        color: #000;
+        color: black;
         z-index: 10;
         cursor: pointer;
         user-select: none;
@@ -33,7 +33,7 @@ export const Images = styled.div`
         top: 40%;
         left: 12px;
         font-size: 3rem;
-        color: #000;
+        color: black;
         z-index: 10;
         cursor: pointer;
         user-select: none;
@@ -64,7 +64,7 @@ export const Images = styled.div`
             margin: auto;
             display: flex;
             justify-content: center;
-            max-width: 95%;
+            max-width: 90%;
             min-height: 100px;
             height: unset;
         }

@@ -1,13 +1,10 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router';
-import Cast from '../components/shows/Cast';
-
-import Seasons from '../components/shows/Seasons';
-import ShowMainData from '../components/shows/ShowMainData';
 
 import { apiGet } from '../misc/config';
-import { InfoBlock, LoadingAndErrors, ShowPageWrapper } from './Show.styled';
+
+import ImageSlider from '../components/shows/Image-Slider/ImageSlider';
+import { LoadingAndErrors } from './Show.styled';
 
 const initialState = {
     show: null,
@@ -29,7 +26,7 @@ const reducer = (prevState, action) => {
     }
 };
 
-const Show = () => {
+const ImageShow = () => {
     const { id } = useParams();
 
     const [{ show, isLoading, error }, dispatch] = useReducer(
@@ -40,9 +37,7 @@ const Show = () => {
     useEffect(() => {
         let isMounted = true;
 
-        apiGet(
-            `/shows/${id}?embed[]=seasons&embed[]=episodes&embed[]=cast&embed[]=images`
-        )
+        apiGet(`/shows/${id}/images`)
             .then(results => {
                 setTimeout(() => {
                     if (isMounted) {
@@ -65,14 +60,9 @@ const Show = () => {
         return (
             <LoadingAndErrors>
                 <div className="loading" />
-                <br />
-                <n style={{ fontFamily: 'monospace' }}>
-                    Data is being loaded ...
-                </n>
             </LoadingAndErrors>
         );
     }
-
     if (error) {
         return (
             <div
@@ -86,32 +76,7 @@ const Show = () => {
             </div>
         );
     }
-    return (
-        <ShowPageWrapper>
-            <ShowMainData
-                image={show.image}
-                name={show.name}
-                rating={show.rating}
-                summary={show.summary}
-                language={show.language}
-                tags={show.genres}
-                status={show.status}
-                runtime={show.runtime}
-                premiered={show.premiered}
-                id={show.id}
-            />
-
-            <InfoBlock>
-                <h2 style={{ fontSize: '27px' }}>Seasons</h2>
-                <Seasons seasons={show._embedded.seasons} />
-            </InfoBlock>
-
-            <InfoBlock>
-                <h2 style={{ fontSize: '27px' }}>Cast</h2>
-                <Cast cast={show._embedded.cast} />
-            </InfoBlock>
-        </ShowPageWrapper>
-    );
+    return <ImageSlider slides={show} />;
 };
 
-export default Show;
+export default ImageShow;

@@ -29,6 +29,21 @@ export const MainDataWrapper = styled.div`
             line-height: 1.5;
         }
     }
+    .image-container {
+        position: relative;
+    }
+
+    /* Bottom right text */
+    .text-block {
+        position: absolute;
+        bottom: 40%;
+        right: 35px;
+        background-color: black;
+        color: white;
+        padding: 40px;
+        opacity: 0.6;
+        border-radius: 30px;
+    }
 
     @media only screen and (max-width: 768px) {
         flex-wrap: wrap;
