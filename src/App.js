@@ -8,7 +8,6 @@ import Starred from './pages/Starred';
 import { NotFound } from './App.styled';
 
 import GO_BACK from './images/Go back.png';
-import ImageShow from './pages/ImageShow';
 
 const theme = {
     mainColors: {
@@ -32,10 +31,6 @@ function App() {
 
                 <Route exact path="/show/:id">
                     <Show />
-                </Route>
-
-                <Route exact path="/show/:id/image">
-                    <ImageShow />
                 </Route>
 
                 <Route>
