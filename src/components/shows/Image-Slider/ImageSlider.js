@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import { Images } from './ImageSlider.styled';
 
+import NO_IMAGE from '../../../images/no_results - sad.png';
+
 const ImageSlider = ({ slides }) => {
     const [current, setCurrent] = useState(0);
     const { length } = slides;
@@ -17,7 +19,28 @@ const ImageSlider = ({ slides }) => {
     const SliderData = slides.map(val => val.resolutions.original.url);
 
     if (!Array.isArray(slides) || slides.length <= 0) {
-        return null;
+        return (
+            <div>
+                <div
+                    style={{
+                        fontFamily: 'monospace',
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}
+                >
+                    OOPS!! No Images Found
+                </div>
+                <br />
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <img src={NO_IMAGE} alt="noimage" />
+                </div>
+            </div>
+        );
     }
 
     return (

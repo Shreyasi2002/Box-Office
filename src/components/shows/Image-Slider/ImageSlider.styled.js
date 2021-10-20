@@ -9,8 +9,8 @@ export const Images = styled.div`
     }
 
     .image {
-        min-width: 250px;
-        max-width: 960px;
+        min-width: 400px;
+        max-width: 1160px;
         max-height: 720px;
         min-height: 240px;
         border: 1px solid #ddd;

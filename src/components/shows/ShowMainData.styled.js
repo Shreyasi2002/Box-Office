@@ -31,12 +31,13 @@ export const MainDataWrapper = styled.div`
     }
     .image-container {
         position: relative;
+        cursor: pointer;
     }
 
     /* Bottom right text */
     .text-block {
         position: absolute;
-        bottom: 40%;
+        top: 40%;
         right: 35px;
         background-color: black;
         color: white;

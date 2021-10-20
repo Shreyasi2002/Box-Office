@@ -33,7 +33,7 @@ const ShowMainData = ({
     return (
         <MainDataWrapper>
             <div>
-                <div onClick={togglePopup}>
+                <div onClick={togglePopup} id="popup">
                     <div className="image-container">
                         <img
                             src={image ? image.original : IMG_PLACEHOLDER}
