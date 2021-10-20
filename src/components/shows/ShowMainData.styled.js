@@ -24,6 +24,10 @@ export const MainDataWrapper = styled.div`
             color: #5f5f5f;
             line-height: 1.5;
         }
+        .details {
+            color: #5f5f5f;
+            line-height: 1.5;
+        }
     }
 
     @media only screen and (max-width: 768px) {

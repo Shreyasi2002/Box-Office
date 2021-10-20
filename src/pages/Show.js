@@ -2,7 +2,6 @@
 import React, { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router';
 import Cast from '../components/shows/Cast';
-import Details from '../components/shows/Details';
 
 import Seasons from '../components/shows/Seasons';
 import ShowMainData from '../components/shows/ShowMainData';
@@ -68,9 +67,10 @@ const Show = () => {
         return (
             <LoadingAndErrors>
                 <div className="loading" />
-                <h3 style={{ fontFamily: 'monospace' }}>
+                <br />
+                <n style={{ fontFamily: 'monospace' }}>
                     Data is being loaded ...
-                </h3>
+                </n>
             </LoadingAndErrors>
         );
     }
@@ -97,18 +97,10 @@ const Show = () => {
                 summary={show.summary}
                 language={show.language}
                 tags={show.genres}
+                status={show.status}
+                runtime={show.runtime}
+                premiered={show.premiered}
             />
-            <InfoBlock>
-                <h2 style={{ fontSize: '27px' }}>Details</h2>
-                <Details
-                    status={show.status}
-                    runtime={show.runtime}
-                    network={show.network}
-                    premiered={show.premiered}
-                    officialSite={show.officialSite}
-                />
-            </InfoBlock>
-
             <InfoBlock>
                 <h2 style={{ fontSize: '27px' }}>Images</h2>
                 <ImageSlider slides={show._embedded.images} />

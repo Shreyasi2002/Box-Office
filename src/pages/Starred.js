@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/no-mutable-exports */
 import React, { useState, useEffect, useCallback } from 'react';
 
@@ -68,6 +69,7 @@ const Starred = () => {
                             style={{
                                 display: 'flex',
                                 justifyContent: 'center',
+                                fontFamily: 'monospace',
                             }}
                         >
                             Shows are still Loading ...
