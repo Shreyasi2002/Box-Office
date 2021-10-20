@@ -102,7 +102,7 @@ const Show = () => {
             />
 
             <InfoBlock>
-                <h2 style={{ fontSize: '27px' }}>Seasons</h2>
+                <h2 style={{ fontSize: '27px' }}>Seasons - Episodes</h2>
                 <Seasons seasons={show._embedded.seasons} />
             </InfoBlock>
 
