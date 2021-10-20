@@ -31,6 +31,7 @@ const renderResults = results => {
                         display: 'flex',
                         justifyContent: 'center',
                         fontFamily: 'monospace',
+                        fontSize: '16px',
                     }}
                 >
                     No Results Found
@@ -44,6 +45,7 @@ const renderResults = results => {
                         justifyContent: 'center',
                         paddingLeft: '10px',
                         fontFamily: 'monospace',
+                        fontSize: '16px',
                     }}
                 >
                     Dont Be Sad! We will find it! ......

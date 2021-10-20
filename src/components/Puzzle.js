@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable consistent-return */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-continue */
@@ -5,8 +6,8 @@
 
 import NOT_ADDED from '../images/nothing added.png';
 import './Puzzle.css';
+import { PUZZLE_DIFFICULTY } from '../pages/Starred';
 
-const PUZZLE_DIFFICULTY = 8;
 const PUZZLE_HOVER_TINT = '#009900';
 
 let _stage;
@@ -66,12 +67,12 @@ function initPuzzle() {
 function createTitle(msg) {
     _stage.fillStyle = '#000000';
     _stage.globalAlpha = 0.5;
-    _stage.fillRect(50, _puzzleHeight - 40, _puzzleWidth - 100, 40);
+    _stage.fillRect(80, _puzzleHeight - 40, _puzzleWidth - 160, 40);
     _stage.fillStyle = '#FFFFFF';
     _stage.globalAlpha = 1;
     _stage.textAlign = 'center';
     _stage.textBaseline = 'middle';
-    _stage.font = '20px monospace';
+    _stage.font = '16px monospace';
     _stage.fillText(msg, _puzzleWidth / 2, _puzzleHeight - 20);
 }
 function buildPieces() {
