@@ -22,6 +22,7 @@ export const SearchCard = styled.div`
 
         img {
             object-fit: cover;
+            border-radius: 40px;
             height: 100%;
             width: 100%;
             position: relative;
