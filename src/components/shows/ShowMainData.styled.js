@@ -34,6 +34,11 @@ export const MainDataWrapper = styled.div`
         cursor: pointer;
     }
 
+    .image-container:hover {
+        color: black;
+        opacity: 0.6;
+    }
+
     /* Bottom right text */
     .text-block {
         position: absolute;

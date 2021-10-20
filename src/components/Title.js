@@ -3,7 +3,7 @@ import { TitleWrapper, WelcomeImage } from './Title.styled';
 
 import WELCOME from '../images/welcome.png';
 
-const Title = ({ title, subtitle }) => (
+const Title = ({ title }) => (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
         <WelcomeImage>
             <div className="image">
@@ -14,7 +14,6 @@ const Title = ({ title, subtitle }) => (
             <h1>
                 <b>{title}</b>
             </h1>
-            <p>{subtitle}</p>
         </TitleWrapper>
     </div>
 );

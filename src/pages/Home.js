@@ -97,10 +97,7 @@ const Home = () => {
 
     return (
         <div>
-            <Title
-                title="BOX OFFICE"
-                subtitle="Are you looking for a movie or an actor?"
-            />
+            <Title title="BOX OFFICE" />
 
             <MainPageLayout>
                 <SearchInput

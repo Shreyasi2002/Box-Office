@@ -30,7 +30,7 @@
     position: fixed;
     right: 97%;
     top: 1%;
-    background-color: ghostwhite;
+    background-color: cornsilk;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -39,8 +39,9 @@
     border: 1px solid #999;
     font-size: 25px;
     opacity: 1;
+    color: aliceblue;
 }
 
 .close-icon:hover {
-    background-color: crimson;
+    color: black;
 }
