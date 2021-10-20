@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-// import Confetti from 'react-confetti';
+/* eslint-disable import/no-cycle */
+/* eslint-disable import/no-mutable-exports */
+import React, { useState, useEffect, useCallback } from 'react';
 
 import MainPageLayout from '../components/MainPageLayout';
 import { useShows } from '../misc/custom-hooks';
@@ -10,6 +11,10 @@ import { LoadingAndErrors } from './Show.styled';
 import { init } from '../components/Puzzle';
 
 import Title from '../components/Title';
+import CustomRadio from '../components/CustomRadio';
+import { RadioInputsWrapper } from './Home.styled';
+
+export let PUZZLE_DIFFICULTY;
 
 const Starred = () => {
     const [starred] = useShows();
@@ -17,6 +22,20 @@ const Starred = () => {
     const [shows, setShows] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const [difficulty, setDifficulty] = useState('easy');
+
+    const OnRadioChange = useCallback(ev => {
+        setDifficulty(ev.target.value);
+    }, []);
+
+    if (difficulty === 'easy') {
+        PUZZLE_DIFFICULTY = 4;
+    } else if (difficulty === 'medium') {
+        PUZZLE_DIFFICULTY = 7;
+    } else {
+        PUZZLE_DIFFICULTY = 10;
+    }
 
     useEffect(() => {
         if (starred && starred.length > 0) {
@@ -50,6 +69,7 @@ const Starred = () => {
                             style={{
                                 display: 'flex',
                                 justifyContent: 'center',
+                                fontFamily: 'monospace',
                             }}
                         >
                             Shows are still Loading ...
@@ -70,6 +90,7 @@ const Starred = () => {
                                 fontFamily: 'monospace',
                                 paddingLeft: '40px',
                                 textAlign: 'center',
+                                fontSize: '16px',
                             }}
                         >
                             <br />
@@ -89,6 +110,38 @@ const Starred = () => {
                         >
                             <canvas id="canvas" />
                         </div>
+                        <div>
+                            <RadioInputsWrapper>
+                                <div>
+                                    <CustomRadio
+                                        label="Easy"
+                                        id="easy"
+                                        value="easy"
+                                        checked={difficulty === 'easy'}
+                                        onChange={OnRadioChange}
+                                    />
+                                </div>
+                                <div>
+                                    <CustomRadio
+                                        label="Medium"
+                                        id="medium"
+                                        value="medium"
+                                        checked={difficulty === 'medium'}
+                                        onChange={OnRadioChange}
+                                    />
+                                </div>
+                                <div>
+                                    <CustomRadio
+                                        label="Hard"
+                                        id="hard"
+                                        value="hard"
+                                        checked={difficulty === 'hard'}
+                                        onChange={OnRadioChange}
+                                    />
+                                </div>
+                            </RadioInputsWrapper>
+                        </div>
+
                         <div
                             style={{
                                 color: 'darkgray',
@@ -97,7 +150,7 @@ const Starred = () => {
                                 fontFamily: 'monospace',
                                 paddingLeft: '40px',
                                 textAlign: 'center',
-                                fontSize: '15px',
+                                fontSize: '14px',
                             }}
                         >
                             <br />

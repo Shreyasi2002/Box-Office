@@ -33,7 +33,7 @@ export const InfoBlock = styled.div`
 `;
 
 export const LoadingAndErrors = styled.div`
-    h3 {
+    n {
         display: flex;
         justify-content: center;
     }
@@ -43,9 +43,9 @@ export const LoadingAndErrors = styled.div`
     }
     .loading::after {
         content: '';
-        width: 100px;
-        height: 100px;
-        border: 30px solid aliceblue;
+        width: 50px;
+        height: 50px;
+        border: 20px solid aliceblue;
         border-top: 35%;
         border-top-color: blue;
         border-radius: 50%;

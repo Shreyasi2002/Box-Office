@@ -4,7 +4,7 @@ import { useLocation } from 'react-router';
 import { LinkStyled, NavList } from './Navs.styled';
 
 const LINKS = [
-    { to: '/', text: 'HOME Page' },
+    { to: '/', text: 'Home Page' },
     { to: '/starred', text: 'Starred Page' },
 ];
 
@@ -13,7 +13,6 @@ const Navs = () => {
 
     return (
         <div>
-            <br />
             <NavList>
                 {LINKS.map(item => (
                     <li key={item.to}>

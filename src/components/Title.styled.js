@@ -9,12 +9,13 @@ export const TitleWrapper = styled.div`
         letter-spacing: 5px;
         text-transform: uppercase;
         margin: 0 0 10px;
-        font-size: 90px;
+        font-size: 59px;
         font-weight: 9000;
         text-shadow: 10px 14px 15px 5px #0046d8;
         font-family: 'MontSerrat';
+        margin-left: 0.5rem;
 
-        transform: translateX(2%);
+        transform: translateX(0%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-size: cover;
@@ -27,9 +28,16 @@ export const TitleWrapper = styled.div`
     p {
         color: ${({ theme }) => theme.mainColors.dark};
         margin: 0;
-        font-size: 20px;
+        font-size: 18px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
             'Lucida Sans', Arial, sans-serif;
-        padding-left: 5%;
+    }
+`;
+
+export const WelcomeImage = styled.div`
+    margin: -55px -55px;
+
+    .image {
+        float: left;
     }
 `;

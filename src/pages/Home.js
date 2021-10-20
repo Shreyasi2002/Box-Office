@@ -1,8 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable prefer-const */
 import React, { useState, useCallback } from 'react';
-import Confetti from 'react-confetti';
-import useWindowSize from 'react-use/lib/useWindowSize';
+// import useWindowSize from 'react-use/lib/useWindowSize';
 
 import ActorGrid from '../components/actors/ActorGrid';
 import CustomRadio from '../components/CustomRadio';
@@ -11,16 +10,13 @@ import ShowGrid from '../components/shows/ShowGrid';
 import { apiGet } from '../misc/config';
 import { useLastQuery, useWhyDidYouUpdate } from '../misc/custom-hooks';
 import {
-    ConfettiFadeOut,
     RadioInputsWrapper,
     SearchButtonWrapper,
     SearchInput,
-    WelcomeImage,
 } from './Home.styled';
 import Title from '../components/Title';
 
 import NO_RESULTS from '../images/no_results - sad.png';
-import WELCOME from '../images/welcome.png';
 
 import './Home.css';
 
@@ -33,6 +29,7 @@ const renderResults = results => {
                         display: 'flex',
                         justifyContent: 'center',
                         fontFamily: 'monospace',
+                        fontSize: '16px',
                     }}
                 >
                     No Results Found
@@ -46,6 +43,7 @@ const renderResults = results => {
                         justifyContent: 'center',
                         paddingLeft: '10px',
                         fontFamily: 'monospace',
+                        fontSize: '16px',
                     }}
                 >
                     Dont Be Sad! We will find it! ......
@@ -97,77 +95,53 @@ const Home = () => {
 
     useWhyDidYouUpdate('home', { onInputChange, onKeyDown });
 
-    const { width, height } = useWindowSize();
-
     return (
         <div>
-            <div>
-                <Title
-                    title="BOX OFFICE"
-                    subtitle="Are you looking for a movie or an actor?"
+            <Title
+                title="BOX OFFICE"
+                subtitle="Are you looking for a movie or an actor?"
+            />
+
+            <MainPageLayout>
+                <SearchInput
+                    type="text"
+                    placeholder="Search for something"
+                    onChange={onInputChange}
+                    onKeyDown={onKeyDown}
+                    value={input}
                 />
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <WelcomeImage>
-                        <div className="image">
-                            <img src={WELCOME} alt="welcome" />
-                        </div>
-                    </WelcomeImage>
-
-                    <MainPageLayout>
-                        <br />
-                        <br />
-
-                        <SearchInput
-                            type="text"
-                            placeholder="Search for something"
-                            onChange={onInputChange}
-                            onKeyDown={onKeyDown}
-                            value={input}
+                <RadioInputsWrapper>
+                    <div>
+                        <CustomRadio
+                            label="Shows"
+                            id="show-search"
+                            value="shows"
+                            checked={isShowSearch}
+                            onChange={OnRadioChange}
                         />
-                        <RadioInputsWrapper>
-                            <div>
-                                <CustomRadio
-                                    label="Shows"
-                                    id="show-search"
-                                    value="shows"
-                                    checked={isShowSearch}
-                                    onChange={OnRadioChange}
-                                />
-                            </div>
+                    </div>
 
-                            <div>
-                                <CustomRadio
-                                    label="Actors"
-                                    id="actor-search"
-                                    value="people"
-                                    checked={!isShowSearch}
-                                    onChange={OnRadioChange}
-                                />
-                            </div>
-                        </RadioInputsWrapper>
+                    <div>
+                        <CustomRadio
+                            label="Actors"
+                            id="actor-search"
+                            value="people"
+                            checked={!isShowSearch}
+                            onChange={OnRadioChange}
+                        />
+                    </div>
+                </RadioInputsWrapper>
 
-                        <SearchButtonWrapper>
-                            <button type="button" onClick={onSearch}>
-                                Search
-                            </button>
-                            <br />
-                        </SearchButtonWrapper>
-                    </MainPageLayout>
-                </div>
-            </div>
+                <SearchButtonWrapper>
+                    <button type="button" onClick={onSearch}>
+                        Search
+                    </button>
+                    <br />
+                </SearchButtonWrapper>
+            </MainPageLayout>
 
             <div id="welcome">Welcome to BOX OFFICE!</div>
-            <ConfettiFadeOut>
-                <Confetti
-                    width={width}
-                    height={height}
-                    opacity={0.8}
-                    numberOfPieces={100}
-                    tweenDuration={10000}
-                />
-            </ConfettiFadeOut>
             {renderResults(results)}
-            <br />
             <br />
             <br />
         </div>
