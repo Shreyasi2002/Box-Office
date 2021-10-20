@@ -8,12 +8,9 @@ const ActorGrid = ({ data }) => (
     <FlexGrid>
         {data.map(({ person }) => (
             <ActorCard
-                key={person.id}
-                birthday={person.birthday}
+                id={person.id}
                 name={person.name}
                 image={person.image ? person.image.medium : IMAGE_NOT_FOUND}
-                country={person.country ? person.country.name : null}
-                deathday={person.deathday}
                 gender={person.gender}
             />
         ))}

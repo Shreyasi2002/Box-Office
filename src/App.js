@@ -5,6 +5,8 @@ import { ThemeProvider } from 'styled-components';
 import Home from './pages/Home';
 import Show from './pages/Show';
 import Starred from './pages/Starred';
+import Actor from './pages/Actor';
+
 import { NotFound } from './App.styled';
 
 import GO_BACK from './images/Go back.png';
@@ -31,6 +33,10 @@ function App() {
 
                 <Route exact path="/show/:id">
                     <Show />
+                </Route>
+
+                <Route exact path="/people/:id">
+                    <Actor />
                 </Route>
 
                 <Route>

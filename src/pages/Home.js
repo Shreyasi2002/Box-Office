@@ -150,7 +150,6 @@ const Home = () => {
             <div id="welcome">Welcome to BOX OFFICE!</div>
         </>
     );
-    console.log(results);
 
     return (
         <div>
