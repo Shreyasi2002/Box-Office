@@ -71,7 +71,8 @@ export const Headline = styled.div`
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
         'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
-    h1 {
+    h1,
+    h3 {
         margin: 0;
         border-right: 1px solid #ddd;
         padding-right: 25px;

@@ -1,37 +1,83 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 
-import { SeasonList, SeasonsWrapper } from './Seasons.styled';
+import { SeasonList } from './Seasons.styled';
+import IMG_PLACEHOLDER from '../../images/not-found.png';
+import { Headline, MainDataWrapper } from './ShowMainData.styled';
 
 const Seasons = ({ seasons }) => (
-    <SeasonsWrapper>
-        <p>
-            Seasons in total: <span>{seasons.length}</span>
-        </p>
-        <p>
-            Episodes in total:{' '}
-            <span>
-                {seasons.reduce((acc, season) => acc + season.episodeOrder, 0)}
-            </span>
-        </p>
-        <SeasonList>
-            {seasons.map(season => (
-                <div key={season.id} className="season-item">
-                    <div className="left">
-                        <p>Season {season.number}</p>
-                        <p>
-                            Episodes: <span>{season.episodeOrder}</span>
-                        </p>
+    <SeasonList>
+        {seasons.map(season => (
+            <div key={season.id} className="season-item">
+                <MainDataWrapper>
+                    <div className="image-container">
+                        <img
+                            src={
+                                season.image
+                                    ? season.image.original
+                                    : IMG_PLACEHOLDER
+                            }
+                            alt="season-cover"
+                        />
                     </div>
-                    <div className="right">
-                        Aired:{' '}
-                        <span>
-                            {season.premiereDate} - {season.endDate}
-                        </span>
+                    <div className="text-side">
+                        <Headline>
+                            <h3
+                                style={{
+                                    fontSize: '20px',
+                                    paddingRight: '15px',
+                                }}
+                            >
+                                Season {season.number}
+                            </h3>
+                            <div
+                                style={{
+                                    fontSize: '17px',
+                                    marginLeft: '-5px',
+                                    color: '#5f5f5f',
+                                }}
+                            >
+                                {season.episodeOrder
+                                    ? season.episodeOrder
+                                    : '__'}{' '}
+                                Episodes
+                            </div>
+                        </Headline>
+                        <div style={{ color: '#5f5f5f', lineHeight: '1.5' }}>
+                            <br />
+                            Premiered on{' '}
+                            {
+                                <b>
+                                    <span>
+                                        {season.premiereDate
+                                            ? season.premiereDate
+                                            : '__'}
+                                    </span>
+                                </b>
+                            }
+                        </div>
+                        <div
+                            className="summary"
+                            dangerouslySetInnerHTML={{ __html: season.summary }}
+                        />
                     </div>
+                </MainDataWrapper>
+            </div>
+        ))}
+        {/* {seasons.map(season => (
+            <div key={season.id} className="season-item">
+                <div className="left">
+                    <p>Season {season.number}</p>
+                    <p>
+                        Episodes: <span>{season.episodeOrder}</span>
+                    </p>
                 </div>
-            ))}
-        </SeasonList>
-    </SeasonsWrapper>
+                <div className="right">
+                    
+                </div>
+            </div>
+        ))} */}
+    </SeasonList>
 );
 
 export default Seasons;

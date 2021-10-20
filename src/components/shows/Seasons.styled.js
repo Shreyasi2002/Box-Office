@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
-export const SeasonsWrapper = styled.div`
-    p {
-        margin: 5px 0;
-    }
-
-    span {
-        font-weight: 700;
-    }
-`;
-
 export const SeasonList = styled.div`
     display: flex;
     flex-direction: column;
+
+    .image-container {
+        img {
+            min-width: 50px;
+            width: 150px;
+            max-height: 350px;
+            border: 1px solid #ddd;
+            border-radius: 40px;
+        }
+    }
 
     .season-item {
         display: flex;

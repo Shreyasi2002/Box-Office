@@ -23,6 +23,15 @@ import popularResults from '../components/shows/PopularShow.json';
 
 import './Home.css';
 
+function setAll(obj, val) {
+    Object.keys(obj).forEach(index => {
+        obj[index] = val;
+    });
+}
+function setNull(obj) {
+    setAll(obj, null);
+}
+
 const renderResults = results => {
     if (results && results.length === 0) {
         return (
@@ -139,7 +148,6 @@ const Home = () => {
                 </SearchButtonWrapper>
             </MainPageLayout>
             <div id="welcome">Welcome to BOX OFFICE!</div>
-            <br />
         </>
     );
     console.log(results);
