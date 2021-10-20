@@ -49,15 +49,6 @@ export const SearchButtonWrapper = styled.div`
     }
 `;
 
-export const WelcomeImage = styled.div`
-    padding: 0 -20px;
-    margin: -45px -75px;
-
-    .image {
-        float: left;
-    }
-`;
-
 export const ConfettiFadeOut = styled.div`
     opacity: 0;
     animation: fadeOut 20s;
