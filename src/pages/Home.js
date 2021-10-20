@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-param-reassign */
 /* eslint-disable prefer-const */
 import React, { useState, useCallback } from 'react';
@@ -17,6 +18,8 @@ import {
 import Title from '../components/Title';
 
 import NO_RESULTS from '../images/no_results - sad.png';
+
+import popularResults from '../components/shows/PopularShow.json';
 
 import './Home.css';
 
@@ -95,10 +98,9 @@ const Home = () => {
 
     useWhyDidYouUpdate('home', { onInputChange, onKeyDown });
 
-    return (
-        <div>
+    const element = (
+        <>
             <Title title="BOX OFFICE" />
-
             <MainPageLayout>
                 <SearchInput
                     type="text"
@@ -130,15 +132,28 @@ const Home = () => {
                 </RadioInputsWrapper>
 
                 <SearchButtonWrapper>
-                    <button type="button" onClick={onSearch}>
+                    <button type="button" onClick={onSearch} id="SearcButton">
                         Search
                     </button>
                     <br />
                 </SearchButtonWrapper>
             </MainPageLayout>
-
             <div id="welcome">Welcome to BOX OFFICE!</div>
+            <br />
+        </>
+    );
+    console.log(results);
+
+    return (
+        <div>
+            {element}
+
             {renderResults(results)}
+            <br />
+            <div>
+                <h2>Popular Shows</h2>
+                <ShowGrid data={popularResults} />
+            </div>
             <br />
             <br />
         </div>
