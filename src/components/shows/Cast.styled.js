@@ -25,6 +25,10 @@ export const CastList = styled.div`
             object-fit: cover;
             width: 100%;
             height: 100%;
+            &:hover {
+                opacity: 0.6;
+                cursor: pointer;
+            }
         }
     }
 
