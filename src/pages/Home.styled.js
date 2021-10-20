@@ -48,17 +48,3 @@ export const SearchButtonWrapper = styled.div`
         }
     }
 `;
-
-export const ConfettiFadeOut = styled.div`
-    opacity: 0;
-    animation: fadeOut 20s;
-
-    @keyframes fadeOut {
-        from {
-            opacity: 10;
-        }
-        to {
-            opacity: 0;
-        }
-    }
-`;

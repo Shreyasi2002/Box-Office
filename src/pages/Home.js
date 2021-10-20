@@ -1,8 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable prefer-const */
 import React, { useState, useCallback } from 'react';
-import Confetti from 'react-confetti';
-import useWindowSize from 'react-use/lib/useWindowSize';
+// import useWindowSize from 'react-use/lib/useWindowSize';
 
 import ActorGrid from '../components/actors/ActorGrid';
 import CustomRadio from '../components/CustomRadio';
@@ -11,7 +10,6 @@ import ShowGrid from '../components/shows/ShowGrid';
 import { apiGet } from '../misc/config';
 import { useLastQuery, useWhyDidYouUpdate } from '../misc/custom-hooks';
 import {
-    ConfettiFadeOut,
     RadioInputsWrapper,
     SearchButtonWrapper,
     SearchInput,
@@ -97,8 +95,6 @@ const Home = () => {
 
     useWhyDidYouUpdate('home', { onInputChange, onKeyDown });
 
-    const { width, height } = useWindowSize();
-
     return (
         <div>
             <Title
@@ -145,17 +141,7 @@ const Home = () => {
             </MainPageLayout>
 
             <div id="welcome">Welcome to BOX OFFICE!</div>
-            <ConfettiFadeOut>
-                <Confetti
-                    width={width}
-                    height={height}
-                    opacity={0.8}
-                    numberOfPieces={100}
-                    tweenDuration={10000}
-                />
-            </ConfettiFadeOut>
             {renderResults(results)}
-            <br />
             <br />
             <br />
         </div>
