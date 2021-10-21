@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/Box-Office/static/css/main.604306b9.chunk.css",
-    "main.js": "/Box-Office/static/js/main.3b88caf2.chunk.js",
-    "main.js.map": "/Box-Office/static/js/main.3b88caf2.chunk.js.map",
-    "runtime-main.js": "/Box-Office/static/js/runtime-main.55d06fae.js",
-    "runtime-main.js.map": "/Box-Office/static/js/runtime-main.55d06fae.js.map",
-    "static/js/2.4e28bd77.chunk.js": "/Box-Office/static/js/2.4e28bd77.chunk.js",
-    "static/js/2.4e28bd77.chunk.js.map": "/Box-Office/static/js/2.4e28bd77.chunk.js.map",
-    "static/js/3.54bbd887.chunk.js": "/Box-Office/static/js/3.54bbd887.chunk.js",
-    "static/js/3.54bbd887.chunk.js.map": "/Box-Office/static/js/3.54bbd887.chunk.js.map",
+    "main.css": "/Box-Office/static/css/main.8fa41b55.chunk.css",
+    "main.js": "/Box-Office/static/js/main.62456ae5.chunk.js",
+    "main.js.map": "/Box-Office/static/js/main.62456ae5.chunk.js.map",
+    "runtime-main.js": "/Box-Office/static/js/runtime-main.71c5c4ac.js",
+    "runtime-main.js.map": "/Box-Office/static/js/runtime-main.71c5c4ac.js.map",
+    "static/js/2.152c1e38.chunk.js": "/Box-Office/static/js/2.152c1e38.chunk.js",
+    "static/js/2.152c1e38.chunk.js.map": "/Box-Office/static/js/2.152c1e38.chunk.js.map",
+    "static/js/3.fe817f74.chunk.js": "/Box-Office/static/js/3.fe817f74.chunk.js",
+    "static/js/3.fe817f74.chunk.js.map": "/Box-Office/static/js/3.fe817f74.chunk.js.map",
     "index.html": "/Box-Office/index.html",
     "service-worker.js": "/Box-Office/service-worker.js",
     "service-worker.js.map": "/Box-Office/service-worker.js.map",
-    "static/css/main.604306b9.chunk.css.map": "/Box-Office/static/css/main.604306b9.chunk.css.map",
-    "static/js/2.4e28bd77.chunk.js.LICENSE.txt": "/Box-Office/static/js/2.4e28bd77.chunk.js.LICENSE.txt",
+    "static/css/main.8fa41b55.chunk.css.map": "/Box-Office/static/css/main.8fa41b55.chunk.css.map",
+    "static/js/2.152c1e38.chunk.js.LICENSE.txt": "/Box-Office/static/js/2.152c1e38.chunk.js.LICENSE.txt",
     "static/media/Go back.afbdbfac.png": "/Box-Office/static/media/Go back.afbdbfac.png",
     "static/media/Puzzle.css": "/Box-Office/static/media/background.3633bd2a.jpeg",
-    "static/media/no_results - sad.d98395d7.png": "/Box-Office/static/media/no_results - sad.d98395d7.png",
+    "static/media/no_results - sad.7276a1b0.png": "/Box-Office/static/media/no_results - sad.7276a1b0.png",
     "static/media/not-found.1668c579.png": "/Box-Office/static/media/not-found.1668c579.png",
-    "static/media/nothing added.58afb2bd.png": "/Box-Office/static/media/nothing added.58afb2bd.png",
-    "static/media/welcome.6468cbb6.png": "/Box-Office/static/media/welcome.6468cbb6.png"
+    "static/media/nothing added.fa0627bb.png": "/Box-Office/static/media/nothing added.fa0627bb.png",
+    "static/media/welcome.b4de5815.png": "/Box-Office/static/media/welcome.b4de5815.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.55d06fae.js",
-    "static/js/2.4e28bd77.chunk.js",
-    "static/css/main.604306b9.chunk.css",
-    "static/js/main.3b88caf2.chunk.js"
+    "static/js/runtime-main.71c5c4ac.js",
+    "static/js/2.152c1e38.chunk.js",
+    "static/css/main.8fa41b55.chunk.css",
+    "static/js/main.62456ae5.chunk.js"
   ]
 }
