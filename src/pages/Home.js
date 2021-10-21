@@ -9,7 +9,7 @@ import CustomRadio from '../components/CustomRadio';
 import MainPageLayout from '../components/MainPageLayout';
 import ShowGrid from '../components/shows/ShowGrid';
 import { apiGet } from '../misc/config';
-import { useLastQuery, useWhyDidYouUpdate } from '../misc/custom-hooks';
+import { useLastQuery } from '../misc/custom-hooks';
 import {
     RadioInputsWrapper,
     SearchButtonWrapper,
@@ -104,8 +104,6 @@ const Home = () => {
     const OnRadioChange = useCallback(ev => {
         setSearchOption(ev.target.value);
     }, []);
-
-    useWhyDidYouUpdate('home', { onInputChange, onKeyDown });
 
     const element = (
         <>

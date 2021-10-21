@@ -10,7 +10,7 @@ import IMG_PLACEHOLDER from '../../images/not-found.png';
 const CastCredits = ({ cast }) => {
     console.log({ cast });
     console.log('a');
-    console.log();
+    console.log(cast._links);
 
     // console.log(character);
 
