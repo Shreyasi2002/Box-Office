@@ -23,15 +23,6 @@ import popularResults from '../components/shows/PopularShow.json';
 
 import './Home.css';
 
-function setAll(obj, val) {
-    Object.keys(obj).forEach(index => {
-        obj[index] = val;
-    });
-}
-function setNull(obj) {
-    setAll(obj, null);
-}
-
 const renderResults = results => {
     if (results && results.length === 0) {
         return (

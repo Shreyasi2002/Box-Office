@@ -1,35 +1,44 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import IMG_PLACEHOLDER from '../../images/not-found.png';
 import { CastList } from './Cast.styled';
 
-const Cast = ({ cast }) => (
-    <CastList>
-        {cast.map(({ person, character, voice }, key) => (
-            <div key={key} className="cast-item">
-                <Link to={`/people/${key}`}>
-                    <div className="pic-wrapper">
-                        <img
-                            src={
-                                person.image
-                                    ? person.image.medium
-                                    : IMG_PLACEHOLDER
-                            }
-                            alt="cast-person"
-                        />
+const Cast = ({ cast }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const togglePopup = () => {
+        setIsOpen(!isOpen);
+    };
+
+    return (
+        <CastList>
+            {cast.map(({ person, character, voice }, key) => (
+                <div key={key} className="cast-item">
+                    <div>
+                        <div className="pic-wrapper">
+                            <img
+                                src={
+                                    person.image
+                                        ? person.image.medium
+                                        : IMG_PLACEHOLDER
+                                }
+                                alt="cast-person"
+                            />
+                        </div>
                     </div>
-                </Link>
-                <div className="actor">
-                    <span>
-                        <span className="bold">{person.name}</span> |{' '}
-                        {character.name} {voice ? '| Voice' : ''}
-                    </span>
+                    <div className="actor">
+                        <span>
+                            <span className="bold">{person.name}</span> |{' '}
+                            {character.name} {voice ? '| Voice' : ''}
+                        </span>
+                    </div>
+                    <br />
                 </div>
-                <br />
-            </div>
-        ))}
-    </CastList>
-);
+            ))}
+        </CastList>
+    );
+};
 
 export default Cast;

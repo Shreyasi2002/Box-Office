@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
@@ -5,7 +6,6 @@ import { ThemeProvider } from 'styled-components';
 import Home from './pages/Home';
 import Show from './pages/Show';
 import Starred from './pages/Starred';
-import Actor from './pages/Actor';
 
 import { NotFound } from './App.styled';
 
@@ -33,10 +33,6 @@ function App() {
 
                 <Route exact path="/show/:id">
                     <Show />
-                </Route>
-
-                <Route exact path="/people/:id">
-                    <Actor />
                 </Route>
 
                 <Route>

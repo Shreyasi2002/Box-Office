@@ -13,6 +13,11 @@ export const MainDataWrapper = styled.div`
         border-radius: 40px;
     }
 
+    .not-click:hover {
+        opacity: 1;
+        cursor: default;
+    }
+
     .text-side {
         margin-left: 20px;
         .summary {
