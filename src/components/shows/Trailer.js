@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable arrow-body-style */
 import React, { useEffect, useReducer } from 'react';
+import ReactPlayer from 'react-player/youtube';
+
 import { LoadingAndErrors } from '../../pages/Show.styled';
+import { WebPlayer } from './Trailer.styled';
 
 const API_BASE_URL = 'https://www.googleapis.com/youtube/v3/search';
 
@@ -84,8 +87,21 @@ const Trailer = ({ name }) => {
             </div>
         );
     }
-    console.log(result.items[0]);
-    return <div>{name}</div>;
+    const urlLink = result.items[0].id.videoId;
+    return (
+        <div>
+            <WebPlayer>
+                <div className="player-wrapper">
+                    <ReactPlayer
+                        className="react-player"
+                        url={`https://www.youtube.com/watch?v=${urlLink}`}
+                        width="100%"
+                        height="100%"
+                    />
+                </div>
+            </WebPlayer>
+        </div>
+    );
 };
 
 export default Trailer;
