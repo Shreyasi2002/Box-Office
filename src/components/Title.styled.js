@@ -9,7 +9,7 @@ export const TitleWrapper = styled.div`
         letter-spacing: 5px;
         text-transform: uppercase;
         margin: 0 0 10px;
-        font-size: 59px;
+        font-size: 50px;
         font-weight: 9000;
         text-shadow: 10px 14px 15px 5px #0046d8;
         font-family: 'MontSerrat';
@@ -35,9 +35,10 @@ export const TitleWrapper = styled.div`
 `;
 
 export const WelcomeImage = styled.div`
-    margin: -55px -55px;
+    margin-top: -39px;
+    float: right;
 
-    .image {
+    /* .image {
         float: left;
-    }
+    } */
 `;
