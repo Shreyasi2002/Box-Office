@@ -59,7 +59,7 @@ const Starred = () => {
         <div>
             <Title
                 title="BOX OFFICE"
-                subtitle="Are you looking for a movie or an actor?"
+                subtitle="Growing up, my favorite TV Shows are..."
             />
             <MainPageLayout>
                 {isLoading && (
