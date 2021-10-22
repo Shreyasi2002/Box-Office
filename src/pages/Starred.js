@@ -88,7 +88,7 @@ const Starred = () => {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 fontFamily: 'monospace',
-                                paddingLeft: '40px',
+
                                 textAlign: 'center',
                                 fontSize: '16px',
                             }}
@@ -147,7 +147,7 @@ const Starred = () => {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 fontFamily: 'monospace',
-                                paddingLeft: '40px',
+
                                 textAlign: 'center',
                                 fontSize: '14px',
                             }}
