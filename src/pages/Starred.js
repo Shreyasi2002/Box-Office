@@ -104,7 +104,6 @@ const Starred = () => {
                             style={{
                                 display: 'flex',
                                 justifyContent: 'center',
-                                paddingLeft: '25px',
                             }}
                             onLoad={init()}
                         >
