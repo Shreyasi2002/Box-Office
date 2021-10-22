@@ -5,6 +5,7 @@ import Cast from '../components/shows/Cast';
 
 import Seasons from '../components/shows/Seasons';
 import ShowMainData from '../components/shows/ShowMainData';
+import Trailer from '../components/shows/Trailer';
 
 import { apiGet } from '../misc/config';
 import { InfoBlock, LoadingAndErrors, ShowPageWrapper } from './Show.styled';
@@ -86,6 +87,7 @@ const Show = () => {
             </div>
         );
     }
+
     return (
         <ShowPageWrapper>
             <ShowMainData
@@ -104,6 +106,10 @@ const Show = () => {
             <InfoBlock>
                 <h2 style={{ fontSize: '27px' }}>Seasons</h2>
                 <Seasons seasons={show._embedded.seasons} />
+            </InfoBlock>
+            <InfoBlock>
+                <h2 style={{ fontSize: '27px' }}>Trailer</h2>
+                <Trailer name={show.name} />
             </InfoBlock>
 
             <InfoBlock>
