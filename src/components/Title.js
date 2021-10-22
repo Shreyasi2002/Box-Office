@@ -3,7 +3,6 @@ import React, { memo } from 'react';
 import { TitleWrapper, WelcomeImage } from './Title.styled';
 
 // eslint-disable-next-line no-unused-vars
-import WELCOME from '../images/welcome.png';
 
 const Title = ({ title, subtitle }) => (
     <div style={{ display: 'flex', justifyContent: 'center' }}>

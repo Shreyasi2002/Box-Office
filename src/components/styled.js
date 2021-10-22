@@ -59,16 +59,39 @@ export const Star = styled.div`
 `;
 
 export const Heart = styled.div`
-    display: inline-block;
+    width: 20px;
     height: 15px;
-    text-align: center;
-    width: 15px;
+    background: radial-gradient(
+                circle at 60% 65%,
+                ${props => (props.active ? '#f3166e' : '#ddd')} 64%,
+                transparent 65%
+            )
+            top left,
+        radial-gradient(
+                circle at 40% 65%,
+                ${props => (props.active ? '#f3166e' : '#ddd')} 64%,
+                transparent 65%
+            )
+            top right,
+        linear-gradient(
+                to bottom left,
+                ${props => (props.active ? '#f3166e' : '#ddd')} 43%,
+                transparent 43%
+            )
+            bottom left,
+        linear-gradient(
+                to bottom right,
+                ${props => (props.active ? '#f3166e' : '#ddd')} 43%,
+                transparent 43%
+            )
+            bottom right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    display: inline-block;
+
     &:before {
-        color: ${props => (props.active ? '#f3166e' : '#ddd')};
-        content: '❤';
-        font-size: 3.6em;
-        position: relative;
-        bottom: 120%;
-        right: 25%;
+        content: '';
+        display: block;
+        padding-top: 100%;
     }
 `;
