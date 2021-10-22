@@ -1,29 +1,29 @@
 {
   "files": {
     "main.css": "/Box-Office/static/css/main.181aa843.chunk.css",
-    "main.js": "/Box-Office/static/js/main.fbd18d64.chunk.js",
-    "main.js.map": "/Box-Office/static/js/main.fbd18d64.chunk.js.map",
-    "runtime-main.js": "/Box-Office/static/js/runtime-main.71c5c4ac.js",
-    "runtime-main.js.map": "/Box-Office/static/js/runtime-main.71c5c4ac.js.map",
-    "static/js/2.152c1e38.chunk.js": "/Box-Office/static/js/2.152c1e38.chunk.js",
-    "static/js/2.152c1e38.chunk.js.map": "/Box-Office/static/js/2.152c1e38.chunk.js.map",
-    "static/js/3.fe817f74.chunk.js": "/Box-Office/static/js/3.fe817f74.chunk.js",
-    "static/js/3.fe817f74.chunk.js.map": "/Box-Office/static/js/3.fe817f74.chunk.js.map",
+    "main.js": "/Box-Office/static/js/main.82a46632.chunk.js",
+    "main.js.map": "/Box-Office/static/js/main.82a46632.chunk.js.map",
+    "runtime-main.js": "/Box-Office/static/js/runtime-main.0e630d88.js",
+    "runtime-main.js.map": "/Box-Office/static/js/runtime-main.0e630d88.js.map",
+    "static/js/2.f4868737.chunk.js": "/Box-Office/static/js/2.f4868737.chunk.js",
+    "static/js/2.f4868737.chunk.js.map": "/Box-Office/static/js/2.f4868737.chunk.js.map",
+    "static/js/3.7366fc41.chunk.js": "/Box-Office/static/js/3.7366fc41.chunk.js",
+    "static/js/3.7366fc41.chunk.js.map": "/Box-Office/static/js/3.7366fc41.chunk.js.map",
     "index.html": "/Box-Office/index.html",
     "service-worker.js": "/Box-Office/service-worker.js",
     "service-worker.js.map": "/Box-Office/service-worker.js.map",
     "static/css/main.181aa843.chunk.css.map": "/Box-Office/static/css/main.181aa843.chunk.css.map",
-    "static/js/2.152c1e38.chunk.js.LICENSE.txt": "/Box-Office/static/js/2.152c1e38.chunk.js.LICENSE.txt",
+    "static/js/2.f4868737.chunk.js.LICENSE.txt": "/Box-Office/static/js/2.f4868737.chunk.js.LICENSE.txt",
     "static/media/Go back.afbdbfac.png": "/Box-Office/static/media/Go back.afbdbfac.png",
     "static/media/Puzzle.css": "/Box-Office/static/media/background.3633bd2a.jpeg",
     "static/media/no_results - sad.7276a1b0.png": "/Box-Office/static/media/no_results - sad.7276a1b0.png",
     "static/media/not-found.1668c579.png": "/Box-Office/static/media/not-found.1668c579.png",
-    "static/media/nothing added.fa0627bb.png": "/Box-Office/static/media/nothing added.fa0627bb.png"
+    "static/media/nothing added.83c6f1f9.png": "/Box-Office/static/media/nothing added.83c6f1f9.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.71c5c4ac.js",
-    "static/js/2.152c1e38.chunk.js",
+    "static/js/runtime-main.0e630d88.js",
+    "static/js/2.f4868737.chunk.js",
     "static/css/main.181aa843.chunk.css",
-    "static/js/main.fbd18d64.chunk.js"
+    "static/js/main.82a46632.chunk.js"
   ]
 }
