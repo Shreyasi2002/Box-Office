@@ -98,7 +98,10 @@ const Home = () => {
 
     const element = (
         <>
-            <Title title="BOX OFFICE" />
+            <Title
+                title="BOX OFFICE"
+                subtitle="Millions of TV shows and people to discover. Explore Now..."
+            />
             <MainPageLayout>
                 <SearchInput
                     type="text"
@@ -120,7 +123,7 @@ const Home = () => {
 
                     <div>
                         <CustomRadio
-                            label="Actors"
+                            label="People"
                             id="actor-search"
                             value="people"
                             checked={!isShowSearch}

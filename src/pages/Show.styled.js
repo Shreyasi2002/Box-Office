@@ -26,8 +26,8 @@ export const InfoBlock = styled.div`
         padding-bottom: 5px;
         border-bottom: 1px solid #ddd;
         border-right: 1px;
-        padding-right: 25px;
-        margin-right: 20px;
+        padding-right: 20px;
+        margin-right: 10px;
         font-size: 22px;
     }
 `;
