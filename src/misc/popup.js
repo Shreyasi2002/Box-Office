@@ -5,12 +5,10 @@ import './Popup.css';
 
 const Popup = ({ content, handleClose }) => (
     <div className="popup-box">
-        <div className="box">
-            <span className="close-icon" onClick={handleClose}>
-                x
-            </span>
-            {content}
-        </div>
+        <div className="box">{content}</div>
+        <span className="close-icon" onClick={handleClose}>
+            x
+        </span>
     </div>
 );
 
